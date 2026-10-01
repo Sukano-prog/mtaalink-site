@@ -1,0 +1,7 @@
+*.bak
+*.bak2
+*.bak3
+*.bak_*
+index.html.before-meta
+index.html.pre-metadata
+.DS_Store

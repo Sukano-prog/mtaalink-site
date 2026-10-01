@@ -3,12 +3,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MtaaLink — Your organization, finally in order</title>
-<meta name="description" content="MtaaLink is an all-in-one management platform for Kenyan organizations — members, money, meetings, projects, and reports. Runs in any browser. Free during early access.">
+<meta name="description" content="MtaaLink is an all-in-one management platform for Kenyan organizations — members, money, meetings, projects, elections, SMS announcements, and reports. Runs in any browser. Free during early access.">
 <link rel="canonical" href="https://www.mtaalink.org/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.mtaalink.org/">
 <meta property="og:title" content="MtaaLink — Your organization, finally in order">
-<meta property="og:description" content="An all-in-one management platform for Kenyan organizations — members, money, meetings, projects, and reports.">
+<meta property="og:description" content="An all-in-one management platform for Kenyan organizations — members, money, meetings, projects, elections, and reports.">
 <meta property="og:image" content="https://www.mtaalink.org/images/og-image.jpg">
 <meta property="og:site_name" content="MtaaLink">
 <meta name="twitter:card" content="summary_large_image">
@@ -36,9 +36,47 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Elijah Sukano",
+  "jobTitle": "Founder",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "MtaaLink",
+    "url": "https://www.mtaalink.org"
+  },
+  "url": "https://www.mtaalink.org",
+  "sameAs": [
+    "https://www.linkedin.com/in/elijah-sukano-b73438261",
+    "https://github.com/Sukano-prog"
+  ],
+  "email": "sukanoelijah@gmail.com",
+  "nationality": "Kenyan"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "MtaaLink",
   "url": "https://www.mtaalink.org"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "What is MtaaLink?", "acceptedAnswer": {"@type": "Answer", "text": "MtaaLink is an all-in-one management platform for Kenyan organizations."}},
+    {"@type": "Question", "name": "Who is it for?", "acceptedAnswer": {"@type": "Answer", "text": "Any organization that manages members and money — chamas, churches, SACCOs, welfare groups, villages, small businesses."}},
+    {"@type": "Question", "name": "How much does MtaaLink cost?", "acceptedAnswer": {"@type": "Answer", "text": "Free during early access. When paid plans launch, MtaaLink will cost KES 2,500 per month."}},
+    {"@type": "Question", "name": "Do I need to install an app?", "acceptedAnswer": {"@type": "Answer", "text": "No. MtaaLink runs in your browser on any phone. You can optionally install it to your home screen."}},
+    {"@type": "Question", "name": "Can I export my data?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Every report can be exported to PDF."}},
+    {"@type": "Question", "name": "Is my data safe?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. All data is encrypted and stored securely."}},
+    {"@type": "Question", "name": "Can I run elections in MtaaLink?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Create an election, we send unique voting codes to all members via SMS, and results are tallied live. Members can vote by replying to the SMS or on our secure web page — no app needed."}},
+    {"@type": "Question", "name": "Can I run elections in MtaaLink?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Create an election, we send unique voting codes to all members via SMS, and results are tallied live. Members can vote by replying to the SMS or on our secure web page — no app needed."}},
+    {"@type": "Question", "name": "Can I send SMS announcements to members?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Send announcements to all members or specific groups by SMS. Track delivery, and reach members on any phone — no smartphone or app required."}},
+    {"@type": "Question", "name": "How do I get started?", "acceptedAnswer": {"@type": "Answer", "text": "Sign up free at mtaalink.org/register. Takes 2 minutes."}}
+  ]
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -64,10 +102,10 @@ body { font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif; backgrou
   max-width:1160px; margin:0 auto; }
 .logo { font-weight:800; font-size:16px; letter-spacing:-.02em; }
 .logo span { color:#F0B24A; }
-.nav-links { display:flex; gap:26px; font-size:13px; }
-.nav-links a { color:rgba(251,248,241,.6); text-decoration:none; transition:color .2s; }
+.nav-links { display:flex; gap:20px; font-size:13px; flex-wrap:nowrap; }
+.nav-links a { color:rgba(251,248,241,.6); text-decoration:none; transition:color .2s; white-space:nowrap; }
 .nav-links a:hover { color:#F0B24A; }
-.btn-go { background:#F0B24A; color:#160C08; border:none; padding:8px 18px; border-radius:9px; font-weight:700; font-size:13px; cursor:pointer; box-shadow:0 2px 0 rgba(240,178,74,.45); transition:all .15s; font-family:inherit; text-decoration:none; display:inline-block; }
+.btn-go { background:#F0B24A; color:#160C08; border:none; padding:8px 16px; border-radius:9px; font-weight:700; font-size:13px; cursor:pointer; box-shadow:0 2px 0 rgba(240,178,74,.45); transition:all .15s; font-family:inherit; text-decoration:none; display:inline-block; white-space:nowrap; }
 .btn-go:hover { transform:translateY(-1px); box-shadow:0 3px 0 rgba(240,178,74,.45); }
 .btn-go:active { transform:translateY(1px); box-shadow:0 1px 0 rgba(240,178,74,.45); }
 
@@ -206,7 +244,7 @@ body { font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif; backgrou
 
 /* FOOTER */
 .footer { padding:56px 0 36px; border-top:1px solid rgba(240,178,74,.12); margin-top:64px; }
-.footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1.4fr; gap:36px; margin-bottom:40px; }
+.footer-grid { display:grid; grid-template-columns:1.8fr 0.8fr 0.8fr 0.8fr 1.4fr; gap:28px; margin-bottom:40px; }
 .footer .logo { font-size:18px; margin-bottom:10px; }
 .footer p { font-size:13px; color:rgba(251,248,241,.5); line-height:1.6; }
 .footer h5 { font-size:10px; font-weight:800; letter-spacing:.18em; text-transform:uppercase; color:#F0B24A; margin-bottom:14px; }
@@ -238,11 +276,11 @@ body { font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif; backgrou
   .chapter.hero .chapter-title { font-size:38px; }
   .chapter-lead { font-size:15px; margin-bottom:28px; }
   .hero-grid { grid-template-columns:1fr; gap:36px; }
-  .split, .ring-grid, .footer-grid { grid-template-columns:1fr; }
+  .split, .ring-grid { grid-template-columns:1fr; }
+  .footer-grid { grid-template-columns:1fr; gap:28px; }
   .panel, .cta-final { padding:32px 22px; }
   .panel h3, .cta-final h2 { font-size:24px; }
   .panel-text h3 { font-size:22px; }
-  .nav-links { display:none; }
   .stat-card .num { font-size:56px; }
   .stat-card { padding:24px; }
   .panel-with-image .panel-body { grid-template-columns:1fr; gap:24px; }
@@ -313,7 +351,32 @@ body { font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif; backgrou
   .cta-final h2 { font-size:32px; margin-bottom:12px; }
   .cta-final p { font-size:14px; margin-bottom:24px; }
 }
+/* ============ RESPONSIVE NAV (no hamburger) ============ */
+@media (max-width: 900px) {
+  .nav { padding: 10px 16px; gap: 12px; }
+  .nav-links { gap: 14px; font-size: 12px; }
+  .logo { font-size: 15px; }
+  .btn-go { padding: 7px 12px; font-size: 12px; }
+}
 
+@media (max-width: 640px) {
+  .nav { padding: 8px 12px; gap: 8px; }
+  .nav-links { gap: 10px; font-size: 11px; }
+  .logo { font-size: 14px; }
+  .btn-go { padding: 6px 10px; font-size: 11px; }
+}
+
+@media (max-width: 480px) {
+  .nav { padding: 6px 10px; }
+  .nav-links { gap: 8px; font-size: 10px; }
+  .logo { font-size: 13px; }
+  .logo span { display: inline; }
+  .btn-go { padding: 5px 8px; font-size: 10px; }
+}
+@media (max-width: 400px) {
+  .nav { flex-wrap: wrap; justify-content: center; }
+  .nav-links { order: 3; width: 100%; justify-content: center; margin-top: 8px; }
+}
 </style></head><body>
 
 <div class="bg"><div class="blob b1"></div><div class="blob b2"></div></div>
@@ -324,7 +387,7 @@ body { font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif; backgrou
     <a href="#features">Features</a>
     <a href="#how">How It Works</a>
     <a href="#pricing">Pricing</a>
-    <a href="#about">About</a>
+    <a href="#faq">FAQ</a>
   </div>
   <a class="btn-go" href="https://mtaalink.org/register">Try Free</a>
 </nav>
@@ -339,7 +402,7 @@ body { font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif; backgrou
       <div class="hero-grid">
         <div>
           <h1 class="chapter-title">Your organization, <span class="accent">finally in order.</span></h1>
-          <p class="chapter-lead">MtaaLink is an all-in-one management platform for Kenyan organizations — members, money, meetings, projects, and reports. Runs in any browser. Free during early access.</p>
+          <p class="chapter-lead">MtaaLink is an all-in-one management platform for Kenyan organizations — members, money, meetings, projects, elections, SMS announcements, and reports. Runs in any browser. Free during early access.</p>
           <div class="cta">
             <a class="btn-p" href="https://mtaalink.org/register">Try it free →</a>
             <a class="btn-s" href="#features">See Features</a>
@@ -472,13 +535,25 @@ body { font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif; backgrou
         <div class="acc-item" onclick="toggleAcc(this)">
           <div class="acc-header">
             <div class="acc-num">08</div>
-            <div class="acc-title">Fast & Lightweight</div>
+            <div class="acc-title">Elections & Voting</div>
             <div class="acc-toggle">+</div>
           </div>
           <div class="acc-body">
-            <div class="acc-body-inner">No app to download. Runs in your browser on any phone — Android, iPhone, or desktop. Installs to your home screen like a real app if you want.</div>
+            <div class="acc-body-inner">Run transparent elections for your organization. Members receive a unique voting code via SMS, then vote by replying to the message or on our secure voting page. Live results update in real time. Double-voting is automatically prevented. Works on any phone.</div>
           </div>
         </div>
+
+        <div class="acc-item" onclick="toggleAcc(this)">
+          <div class="acc-header">
+            <div class="acc-num">09</div>
+            <div class="acc-title">Announcements via SMS</div>
+            <div class="acc-toggle">+</div>
+          </div>
+          <div class="acc-body">
+            <div class="acc-body-inner">Send important updates to your entire membership — meeting reminders, event notices, urgent alerts — straight to their phones by SMS. Target specific groups or send to everyone. Track who received the message and who didn't.</div>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -543,6 +618,10 @@ body { font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif; backgrou
           <div class="check">✓</div>
           <div class="body"><h4>Your data, your rules</h4><p>Export everything to PDF anytime. No lock-in. No hidden data policies.</p></div>
         </div>
+        <div class="tick-item" onclick="this.classList.toggle('open')">
+          <div class="check">✓</div>
+          <div class="body"><h4>Members can log in too</h4><p>Every member gets their own account to see meetings, contributions, and election results — read-only, so nothing gets changed by mistake.</p></div>
+        </div>
       </div>
     </section>
 
@@ -579,10 +658,129 @@ body { font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif; backgrou
         <span class="note">Free during early access. KES 2,500/month when we launch paid.</span>
       </div>
     </section>
-
-    <!-- CHAPTER 07 — PROMISE -->
-    <section class="chapter" id="about">
+        <!-- CHAPTER 07 — FAQ -->
+    <section class="chapter" id="faq">
       <div class="chapter-badge"><div class="dot"></div><div class="num">07</div></div>
+      <div class="chapter-label">FAQ</div>
+      <h2 class="chapter-title">Questions? <span class="accent">We've got answers.</span></h2>
+      <p class="chapter-lead">Click any question to see the answer.</p>
+
+      <div class="accordion">
+        <div class="acc-item" onclick="toggleAcc(this)">
+          <div class="acc-header">
+            <div class="acc-num">Q1</div>
+            <div class="acc-title">What is MtaaLink?</div>
+            <div class="acc-toggle">+</div>
+          </div>
+          <div class="acc-body">
+            <div class="acc-body-inner">MtaaLink is an all-in-one management platform for Kenyan organizations. It handles members, contributions, meetings, projects, events, expenses, and reports — all in one place, accessible from any phone or computer.</div>
+          </div>
+        </div>
+
+        <div class="acc-item" onclick="toggleAcc(this)">
+          <div class="acc-header">
+            <div class="acc-num">Q2</div>
+            <div class="acc-title">Who is it for?</div>
+            <div class="acc-toggle">+</div>
+          </div>
+          <div class="acc-body">
+            <div class="acc-body-inner">Any organization that manages members and money — chamas, churches, SACCOs, welfare groups, villages, small businesses, NGOs. If you meet regularly, collect contributions, and need records, MtaaLink is for you.</div>
+          </div>
+        </div>
+
+        <div class="acc-item" onclick="toggleAcc(this)">
+          <div class="acc-header">
+            <div class="acc-num">Q3</div>
+            <div class="acc-title">How much does it cost?</div>
+            <div class="acc-toggle">+</div>
+          </div>
+          <div class="acc-body">
+            <div class="acc-body-inner">Free during early access. No card required. When we launch paid plans, MtaaLink will cost KES 2,500 per month — everything included, no tiers, no restrictions.</div>
+          </div>
+        </div>
+
+        <div class="acc-item" onclick="toggleAcc(this)">
+          <div class="acc-header">
+            <div class="acc-num">Q4</div>
+            <div class="acc-title">Do I need to install an app?</div>
+            <div class="acc-toggle">+</div>
+          </div>
+          <div class="acc-body">
+            <div class="acc-body-inner">No. MtaaLink runs in your browser on any phone — Android, iPhone, or desktop. If you want, you can install it to your home screen like a normal app. But it's optional.</div>
+          </div>
+        </div>
+
+        <div class="acc-item" onclick="toggleAcc(this)">
+          <div class="acc-header">
+            <div class="acc-num">Q5</div>
+            <div class="acc-title">Does it work without internet?</div>
+            <div class="acc-toggle">+</div>
+          </div>
+          <div class="acc-body">
+            <div class="acc-body-inner">The app loads and works on slow or unstable networks. Right now, most features still need a connection to save new data. Full offline mode is on our roadmap.</div>
+          </div>
+        </div>
+
+        <div class="acc-item" onclick="toggleAcc(this)">
+          <div class="acc-header">
+            <div class="acc-num">Q6</div>
+            <div class="acc-title">Can I export my data?</div>
+            <div class="acc-toggle">+</div>
+          </div>
+          <div class="acc-body">
+            <div class="acc-body-inner">Yes. Every report can be exported to PDF — member directories, meeting minutes, contribution summaries, expense reports, and more. Your data belongs to you.</div>
+          </div>
+        </div>
+
+        <div class="acc-item" onclick="toggleAcc(this)">
+          <div class="acc-header">
+            <div class="acc-num">Q7</div>
+            <div class="acc-title">Is my data safe?</div>
+            <div class="acc-toggle">+</div>
+          </div>
+          <div class="acc-body">
+            <div class="acc-body-inner">Yes. All data is encrypted and stored securely. Only members of your organization can see your records. We never sell or share your data with anyone.</div>
+          </div>
+        </div>
+
+                  <div class="acc-item" onclick="toggleAcc(this)">
+            <div class="acc-header">
+              <div class="acc-num">07</div>
+              <div class="acc-title">Can I run elections in MtaaLink?</div>
+              <div class="acc-toggle">+</div>
+            </div>
+            <div class="acc-body">
+              <div class="acc-body-inner">Yes. Create an election, we send unique voting codes to all members via SMS, and results are tallied live. Members can vote by replying to the SMS or on our secure web page — no app needed.</div>
+            </div>
+          </div>
+
+          <div class="acc-item" onclick="toggleAcc(this)">
+            <div class="acc-header">
+              <div class="acc-num">08</div>
+              <div class="acc-title">Can I send SMS announcements to members?</div>
+              <div class="acc-toggle">+</div>
+            </div>
+            <div class="acc-body">
+              <div class="acc-body-inner">Yes. Send announcements to all members or specific groups by SMS. Track delivery, and reach members on any phone — no smartphone or app required.</div>
+            </div>
+          </div>
+
+<div class="acc-item" onclick="toggleAcc(this)">
+          <div class="acc-header">
+            <div class="acc-num">Q8</div>
+            <div class="acc-title">How do I get started?</div>
+            <div class="acc-toggle">+</div>
+          </div>
+          <div class="acc-body">
+            <div class="acc-body-inner">Sign up free at <a href="https://mtaalink.org/register" style="color:#F0B24A;">mtaalink.org/register</a>. It takes 2 minutes. Add your members, and you're ready to start managing. No training needed — if you can use WhatsApp, you can use MtaaLink.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER 08 — PROMISE -->
+    <section class="chapter" id="about">
+      <div class="chapter-badge"><div class="dot"></div><div class="num">08</div></div>
       <div class="chapter-label">Our Promise</div>
 
       <div class="panel panel-with-image">
@@ -603,9 +801,9 @@ body { font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif; backgrou
       </div>
     </section>
 
-    <!-- CHAPTER 08 — FINAL CTA -->
+    <!-- CHAPTER 09 — FINAL CTA -->
     <section class="chapter">
-      <div class="chapter-badge"><div class="dot"></div><div class="num">08</div></div>
+      <div class="chapter-badge"><div class="dot"></div><div class="num">09</div></div>
       <div class="chapter-label">Get Started</div>
       <div class="cta-final">
         <h2>Ready to get your <span class="accent">organization in order?</span></h2>
@@ -629,16 +827,24 @@ body { font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif; backgrou
       <div>
         <h5>Product</h5>
         <div class="footer-nav">
-          <a href="#features">Features</a>
-          <a href="#pricing">Pricing</a>
-          <a href="#how">How It Works</a>
-        </div>
+  <a href="#features">Features</a>
+  <a href="#how">How It Works</a>
+  <a href="#pricing">Pricing</a>
+  <a href="#faq">FAQ</a>
+</div>
       </div>
       <div>
         <h5>Company</h5>
         <div class="footer-nav">
           <a href="#about">About</a>
           <a href="mailto:sukanoelijah@gmail.com">Contact</a>
+        </div>
+      </div>
+      <div>
+        <h5>Follow</h5>
+        <div class="footer-nav">
+          <a href="https://www.linkedin.com/in/elijah-sukano-b73438261" target="_blank" rel="me">LinkedIn</a>
+          <a href="https://github.com/Sukano-prog" target="_blank" rel="me">GitHub</a>
         </div>
       </div>
       <div>
@@ -676,7 +882,7 @@ body { font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif; backgrou
     </div>
     <div class="footer-bottom">
       <div>© 2025 MtaaLink. Built in Kenya.</div>
-      <div>Privacy · Terms</div>
+      <div><a href="/privacy" style="color:rgba(251,248,241,.6);text-decoration:none;border-bottom:none;">Privacy</a> · <a href="/terms" style="color:rgba(251,248,241,.6);text-decoration:none;border-bottom:none;">Terms</a></div>
     </div>
   </footer>
 
