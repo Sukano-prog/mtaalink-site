@@ -1,0 +1,5 @@
+# Cloudflare Pages headers
+# Prevent Google from indexing the pages.dev preview URL
+
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex
