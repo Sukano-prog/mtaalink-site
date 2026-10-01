@@ -1,17 +1,31 @@
 # MtaaLink
 
-> An all-in-one management platform for Kenyan organizations — members, money, meetings, projects, and reports.
+> An all-in-one management platform for Kenyan organizations — members, contributions, meetings, projects, elections with SMS voting, and SMS announcements.
 
 ## About
 - Built in Kenya, 2025
 - Founder: Elijah Sukano
 - Free during early access
 
+## Key Features
+- Members & groups management
+- Contributions tracking (M-PESA and cash)
+- Meetings with agendas, attendance, and auto-generated minutes
+- Projects with milestones and budgets
+- Elections with SMS voter codes and live results
+- Announcements delivered via SMS to all members
+- PDF reports for everything
+
 ## Key Facts
 - Runs in any browser, no app download needed
-- Tracks members, contributions, meetings, projects, expenses
-- Reports export to PDF
+- Works on any phone — Android, iPhone, or desktop
+- SMS voting works on feature phones
 - One price: KES 2,500/month (free during early access)
+
+## Key Pages
+- [Register](https://mtaalink.org/register): Create a free organization account
+- [Privacy Policy](https://www.mtaalink.org/privacy.html)
+- [Terms of Service](https://www.mtaalink.org/terms.html)
 
 ## Contact
 - Email: sukanoelijah@gmail.com
