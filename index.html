@@ -129,6 +129,41 @@ nav{
 .terminal-input{background:transparent;border:none;color:var(--text);font-family:'JetBrains Mono',monospace;font-size:13px;outline:none;flex:1;padding:0;caret-color:var(--accent);}
 .terminal-response{color:var(--muted);margin-bottom:10px;white-space:pre-wrap;font-size:13px;line-height:1.75;}
 
+/* ── PROMISE PANEL ── */
+.panel{max-width:1180px;margin:0 auto;padding:100px 40px;}
+.panel-inner{background:var(--surface);border:1px solid var(--border-strong);border-top:3px solid var(--accent);padding:52px 44px;position:relative;}
+.panel-k{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);text-transform:uppercase;letter-spacing:2.5px;margin-bottom:28px;}
+.panel-body{display:grid;grid-template-columns:1fr 1.4fr;gap:44px;align-items:center;}
+.panel-image{position:relative;aspect-ratio:4/5;border:1px solid var(--border-strong);background:var(--bg-deep);max-width:300px;overflow:hidden;}
+.panel-image img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(0.85) contrast(1.05) sepia(0.08);}
+.panel-image::after{content:'';position:absolute;top:12px;left:12px;width:32px;height:32px;border-top:2px solid var(--accent);border-left:2px solid var(--accent);pointer-events:none;z-index:2;}
+.panel-text h3{font-family:'Syne',sans-serif;font-size:34px;font-weight:700;letter-spacing:-0.025em;line-height:1.12;margin-bottom:18px;}
+.panel-text h3 em{font-family:'Playfair Display',serif;font-style:italic;font-weight:400;color:var(--accent);}
+.panel-text p{font-size:15px;line-height:1.75;color:var(--muted);max-width:540px;}
+.panel-text p strong{color:var(--text);font-weight:600;}
+@media(max-width:768px){
+  .panel{padding:70px 20px;}
+  .panel-inner{padding:36px 24px;}
+  .panel-body{grid-template-columns:1fr;gap:28px;}
+  .panel-image{aspect-ratio:16/10;max-width:100%;}
+  .panel-text h3{font-size:24px;}
+}
+
+/* ── HOW IT WORKS ── */
+.how{max-width:1180px;margin:0 auto;padding:100px 40px;}
+.how-label{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--accent);text-transform:uppercase;letter-spacing:2px;margin-bottom:36px;}
+.how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border-strong);border:1px solid var(--border-strong);}
+.how-step{background:var(--bg);padding:40px 32px;transition:background 0.25s;}
+.how-step:hover{background:var(--surface);}
+.how-num{font-family:'Syne',sans-serif;font-size:42px;font-weight:800;letter-spacing:-0.04em;color:var(--accent);line-height:1;margin-bottom:24px;}
+.how-step h4{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;letter-spacing:-0.005em;margin-bottom:10px;}
+.how-step p{font-size:14px;color:var(--muted);line-height:1.6;}
+@media(max-width:768px){
+  .how{padding:70px 20px;}
+  .how-grid{grid-template-columns:1fr;}
+  .how-num{font-size:36px;}
+}
+
 /* ── PRICING ── */
 .pricing{max-width:880px;margin:0 auto;padding:100px 40px;}
 .price-card{border:1px solid var(--border-strong);padding:56px 48px;background:var(--surface);text-align:center;position:relative;box-shadow:3px 4px 0 rgba(26,24,20,0.05);}
@@ -196,6 +231,7 @@ footer{padding:100px 40px 40px;border-top:1px solid var(--border-strong);max-wid
   <div class="nav-links">
     <a href="#why">Why</a>
     <a href="#modules">Modules</a>
+    <a href="#how">How</a>
     <a href="#demo">Demo</a>
     <a href="#pricing">Pricing</a>
     <a href="https://mtaalink.org/register" class="btn-stamp">Start Free</a>
@@ -208,7 +244,7 @@ footer{padding:100px 40px 40px;border-top:1px solid var(--border-strong);max-wid
   <p>Members, money, meetings, projects, elections and SMS — all in one place. Runs in any browser. Built for chamas, churches, SACCOs and welfare groups.</p>
   <div class="hero-ctas">
     <a href="https://mtaalink.org/register" class="btn">Start Free</a>
-    <a href="#demo" class="btn-ghost">See How It Works</a>
+    <a href="#how" class="btn-ghost">See how it works</a>
   </div>
 </section>
 
@@ -244,6 +280,44 @@ footer{padding:100px 40px 40px;border-top:1px solid var(--border-strong);max-wid
         <li>Announcements delivered to every phone, tracked</li>
         <li>One-click PDF reports for any period, any member</li>
       </ul>
+    </div>
+  </div>
+</section>
+
+
+<section class="panel">
+  <div class="panel-inner">
+    <div class="panel-k">Our Promise — Why we built this</div>
+    <div class="panel-body">
+      <div class="panel-image">
+        <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=800&q=80&auto=format&fit=crop" alt="A meeting in Kenya" loading="lazy">
+      </div>
+      <div class="panel-text">
+        <h3>Built in Kenya. <em>For Kenya.</em></h3>
+        <p>MtaaLink speaks the language of chama, harambee, and mradi. Built by <strong>Elijah Sukano</strong> in 2025 — because running an organization shouldn't require a notebook or a spreadsheet.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="how" class="how">
+  <div class="how-label">(02) — How it works</div>
+  <div class="how-grid">
+    <div class="how-step">
+      <div class="how-num">01</div>
+      <h4>Sign up</h4>
+      <p>Takes 2 minutes. No card required during early access. Runs in any browser — no app to install.</p>
+    </div>
+    <div class="how-step">
+      <div class="how-num">02</div>
+      <h4>Add your members</h4>
+      <p>Via form or bulk import. Capture ID, phone, role, join date — every record your org needs.</p>
+    </div>
+    <div class="how-step">
+      <div class="how-num">03</div>
+      <h4>Run your first election or SMS</h4>
+      <p>Send voting codes or blast an announcement. Watch delivery and tally in real time.</p>
     </div>
   </div>
 </section>
@@ -458,13 +532,6 @@ footer{padding:100px 40px 40px;border-top:1px solid var(--border-strong);max-wid
     scrollBottom();
   });
 
-  const demoSection = document.getElementById('demo');
-  if ('IntersectionObserver' in window){
-    const obs = new IntersectionObserver(function(entries){
-      entries.forEach(function(en){ if (en.isIntersecting) input.focus(); });
-    }, { threshold: 0.4 });
-    obs.observe(demoSection);
-  }
 })();
 </script>
 
