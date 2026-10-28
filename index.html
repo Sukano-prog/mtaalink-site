@@ -1,935 +1,472 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="en">
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MtaaLink — Your organization, finally in order</title>
-<meta name="description" content="MtaaLink is an all-in-one management platform for Kenyan organizations — members, money, meetings, projects, elections, SMS announcements, and reports. Runs in any browser. Free during early access.">
-<link rel="canonical" href="https://www.mtaalink.org/">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://www.mtaalink.org/">
-<meta property="og:title" content="MtaaLink — Your organization, finally in order">
-<meta property="og:description" content="An all-in-one management platform for Kenyan organizations — members, money, meetings, projects, elections, and reports.">
-<meta property="og:image" content="https://www.mtaalink.org/images/og-image.jpg">
-<meta property="og:site_name" content="MtaaLink">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="MtaaLink — Your organization, finally in order">
-<meta name="twitter:description" content="All-in-one management platform for Kenyan organizations.">
-<meta name="twitter:image" content="https://www.mtaalink.org/images/og-image.jpg">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "MtaaLink",
-  "url": "https://www.mtaalink.org",
-  "description": "An all-in-one management platform for Kenyan organizations.",
-  "foundingDate": "2025",
-  "founder": {"@type": "Person", "name": "Elijah Sukano"},
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "contactType": "Customer Support",
-    "email": "sukanoelijah@gmail.com",
-    "telephone": "+254719750245"
-  },
-  "areaServed": "KE"
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Elijah Sukano",
-  "jobTitle": "Founder",
-  "worksFor": {
-    "@type": "Organization",
-    "name": "MtaaLink",
-    "url": "https://www.mtaalink.org"
-  },
-  "url": "https://www.mtaalink.org",
-  "sameAs": [
-    "https://www.linkedin.com/in/elijah-sukano-b73438261",
-    "https://github.com/Sukano-prog"
-  ],
-  "email": "sukanoelijah@gmail.com",
-  "nationality": "Kenyan"
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "MtaaLink",
-  "url": "https://www.mtaalink.org"
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {"@type": "Question", "name": "What is MtaaLink?", "acceptedAnswer": {"@type": "Answer", "text": "MtaaLink is an all-in-one management platform for Kenyan organizations."}},
-    {"@type": "Question", "name": "Who is it for?", "acceptedAnswer": {"@type": "Answer", "text": "Any organization that manages members and money — chamas, churches, SACCOs, welfare groups, villages, small businesses."}},
-    {"@type": "Question", "name": "How much does MtaaLink cost?", "acceptedAnswer": {"@type": "Answer", "text": "Free during early access. When paid plans launch, MtaaLink will cost KES 2,500 per month."}},
-    {"@type": "Question", "name": "Do I need to install an app?", "acceptedAnswer": {"@type": "Answer", "text": "No. MtaaLink runs in your browser on any phone. You can optionally install it to your home screen."}},
-    {"@type": "Question", "name": "Can I export my data?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Every report can be exported to PDF."}},
-    {"@type": "Question", "name": "Is my data safe?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. All data is encrypted and stored securely."}},
-    {"@type": "Question", "name": "Can I run elections in MtaaLink?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Create an election, we send unique voting codes to all members via SMS, and results are tallied live. Members can vote by replying to the SMS or on our secure web page — no app needed."}},
-    {"@type": "Question", "name": "Can I send SMS announcements to members?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Send announcements to all members or specific groups by SMS. Track delivery, and reach members on any phone — no smartphone or app required."}},
-    {"@type": "Question", "name": "How do I get started?", "acceptedAnswer": {"@type": "Answer", "text": "Sign up free at mtaalink.org/register. Takes 2 minutes."}}
-  ]
-}
-</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-* { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior:smooth; }
-body { font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif; background:#160C08; color:#FBF8F1; overflow-x:hidden; -webkit-font-smoothing:antialiased; line-height:1.5; }
-
-/* BACKGROUND */
-.bg { position:fixed; inset:0; z-index:0; overflow:hidden; }
-.bg::before { content:''; position:absolute; inset:0; background-image:repeating-linear-gradient(45deg, rgba(240,178,74,.02) 0 30px, transparent 30px 60px); }
-.blob { position:absolute; border-radius:50%; filter:blur(140px); }
-.b1 { width:650px; height:650px; background:#C75A3D; top:-250px; left:-200px; opacity:.25; }
-.b2 { width:520px; height:520px; background:#F0B24A; bottom:-200px; right:-150px; opacity:.12; }
-
-/* NAV */
-.nav { position:fixed; top:16px; left:16px; right:16px; z-index:100;
-  background:rgba(22,12,8,.65); backdrop-filter:blur(20px) saturate(160%); -webkit-backdrop-filter:blur(20px) saturate(160%);
-  border:1px solid rgba(240,178,74,.15); border-radius:16px;
-  padding:12px 22px; display:flex; justify-content:space-between; align-items:center;
-  max-width:1160px; margin:0 auto; }
-.logo { font-weight:800; font-size:16px; letter-spacing:-.02em; }
-.logo span { color:#F0B24A; }
-.nav-links { display:flex; gap:20px; font-size:13px; flex-wrap:nowrap; }
-.nav-links a { color:rgba(251,248,241,.6); text-decoration:none; transition:color .2s; white-space:nowrap; }
-.nav-links a:hover { color:#F0B24A; }
-.btn-go { background:#F0B24A; color:#160C08; border:none; padding:8px 16px; border-radius:9px; font-weight:700; font-size:13px; cursor:pointer; box-shadow:0 2px 0 rgba(240,178,74,.45); transition:all .15s; font-family:inherit; text-decoration:none; display:inline-block; white-space:nowrap; }
-.btn-go:hover { transform:translateY(-1px); box-shadow:0 3px 0 rgba(240,178,74,.45); }
-.btn-go:active { transform:translateY(1px); box-shadow:0 1px 0 rgba(240,178,74,.45); }
-
-/* LEDGER */
-.page { position:relative; z-index:1; max-width:1160px; margin:0 auto; padding:0 40px; }
-.ledger-track { position:relative; }
-.ledger-track::before { content:''; position:absolute; left:56px; top:0; bottom:0; width:2px;
-  background:linear-gradient(to bottom, transparent 0%, rgba(240,178,74,.15) 5%, rgba(240,178,74,.35) 20%, rgba(240,178,74,.35) 80%, rgba(240,178,74,.15) 95%, transparent 100%); }
-
-/* CHAPTER */
-.chapter { position:relative; padding:80px 0 80px 130px; }
-.chapter-badge { position:absolute; left:0; top:80px; display:flex; align-items:center; gap:12px; }
-.chapter-badge .dot { width:8px; height:8px; border-radius:50%; background:#F0B24A; box-shadow:0 0 0 4px rgba(240,178,74,.15), 0 0 0 8px rgba(240,178,74,.05); margin-left:53px; flex-shrink:0; }
-.chapter-badge .num { font-family:'Courier New',monospace; font-size:11px; font-weight:700; letter-spacing:.15em; color:#F0B24A; padding:5px 9px; border:1px solid rgba(240,178,74,.35); border-radius:4px; background:rgba(240,178,74,.05); }
-.chapter-label { font-family:'Courier New',monospace; font-size:11px; font-weight:700; letter-spacing:.25em; text-transform:uppercase; color:rgba(251,248,241,.4); margin-bottom:18px; }
-.chapter-title { font-size:42px; font-weight:700; letter-spacing:-.03em; line-height:1.08; max-width:720px; margin-bottom:16px; }
-.chapter-title .accent { color:#F0B24A; }
-.chapter-lead { font-size:17px; line-height:1.55; color:rgba(251,248,241,.6); max-width:600px; margin-bottom:40px; }
-.chapter.hero { padding-top:150px; padding-bottom:110px; }
-.chapter.hero .chapter-title { font-size:68px; letter-spacing:-.045em; line-height:1; }
-
-/* BUTTONS */
-.cta { display:flex; gap:12px; margin-top:28px; flex-wrap:wrap; }
-.btn-p { background:#F0B24A; color:#160C08; padding:14px 28px; border-radius:10px; font-weight:700; font-size:14px; border:none; cursor:pointer; box-shadow:0 3px 0 rgba(240,178,74,.45); transition:all .15s; font-family:inherit; text-decoration:none; display:inline-block; }
-.btn-p:hover { transform:translateY(-2px); box-shadow:0 5px 0 rgba(240,178,74,.45); }
-.btn-p:active { transform:translateY(1px); box-shadow:0 1px 0 rgba(240,178,74,.45); }
-.btn-s { background:transparent; color:#FBF8F1; border:1px solid rgba(240,178,74,.25); padding:14px 28px; border-radius:10px; font-weight:600; font-size:14px; cursor:pointer; transition:all .15s; font-family:inherit; text-decoration:none; display:inline-block; }
-.btn-s:hover { border-color:rgba(240,178,74,.5); background:rgba(240,178,74,.04); }
-.btn-s:active { transform:translateY(1px); }
-.btn-t { background:transparent; color:#F0B24A; border:none; padding:14px 6px; font-weight:600; font-size:14px; cursor:pointer; border-bottom:2px solid #F0B24A; transition:all .15s; font-family:inherit; text-decoration:none; display:inline-block; }
-.btn-t:hover { color:#F7C466; border-color:#F7C466; }
-
-/* HERO */
-.hero-grid { display:grid; grid-template-columns:1.4fr 1fr; gap:60px; align-items:center; }
-.stat-card { border-radius:22px; padding:32px; background:rgba(240,178,74,.08); border:1px solid rgba(240,178,74,.25); display:flex; flex-direction:column; justify-content:space-between; aspect-ratio:5/4; }
-.stat-card .lbl-top { font-family:'Courier New',monospace; font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:#F0B24A; font-weight:700; }
-.stat-card .num { font-size:76px; font-weight:800; line-height:.9; color:#F0B24A; letter-spacing:-.05em; margin-top:auto; font-family:'Inter',sans-serif; }
-.stat-card .lbl { font-size:13px; letter-spacing:.1em; text-transform:uppercase; color:rgba(251,248,241,.9); font-weight:600; margin-top:8px; }
-.stat-card .desc { font-size:12px; color:rgba(251,248,241,.55); line-height:1.5; margin-top:12px; max-width:220px; }
-
-/* SPLIT */
-.split { display:grid; grid-template-columns:1fr 1fr; gap:2px; border-radius:18px; overflow:hidden; border:1px solid rgba(240,178,74,.15); }
-.split-side { padding:32px 28px; }
-.split-side.bad { background:rgba(255,255,255,.02); }
-.split-side.good { background:rgba(240,178,74,.06); }
-.split-side h3 { font-size:11px; font-weight:800; letter-spacing:.2em; text-transform:uppercase; margin-bottom:18px; }
-.split-side.bad h3 { color:rgba(226,122,91,.9); }
-.split-side.good h3 { color:#F0B24A; }
-.split-side ul { list-style:none; display:flex; flex-direction:column; gap:12px; }
-.split-side li { font-size:14px; line-height:1.5; color:rgba(251,248,241,.7); padding-left:22px; position:relative; }
-.split-side.bad li::before { content:'×'; position:absolute; left:0; color:#E27A5B; font-weight:800; font-size:16px; line-height:1.4; }
-.split-side.good li::before { content:'✓'; position:absolute; left:0; color:#F0B24A; font-weight:800; }
-
-/* ACCORDION */
-.accordion { display:flex; flex-direction:column; gap:8px; }
-.acc-item { border-radius:16px; background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.08); overflow:hidden; transition:all .3s cubic-bezier(.2,.8,.2,1); }
-.acc-item:hover { border-color:rgba(240,178,74,.25); }
-.acc-item.open { background:rgba(240,178,74,.06); border-color:rgba(240,178,74,.35); }
-.acc-header { display:flex; align-items:center; gap:20px; padding:20px 24px; cursor:pointer; user-select:none; transition:padding .2s; }
-.acc-header:hover { padding-left:28px; }
-.acc-num { font-family:'Courier New',monospace; font-size:11px; font-weight:700; color:rgba(240,178,74,.5); padding:6px 10px; border:1px solid rgba(240,178,74,.3); border-radius:4px; flex-shrink:0; min-width:38px; text-align:center; transition:all .3s; }
-.acc-item.open .acc-num { color:#160C08; background:#F0B24A; border-color:#F0B24A; }
-.acc-title { font-size:17px; font-weight:600; flex:1; letter-spacing:-.01em; transition:color .3s; }
-.acc-item.open .acc-title { color:#F0B24A; }
-.acc-toggle { font-family:'Courier New',monospace; font-size:22px; font-weight:300; color:rgba(240,178,74,.5); transition:all .3s; width:22px; text-align:center; flex-shrink:0; line-height:1; }
-.acc-item.open .acc-toggle { color:#F0B24A; transform:rotate(45deg); }
-.acc-body { max-height:0; overflow:hidden; transition:max-height .4s cubic-bezier(.2,.8,.2,1); }
-.acc-item.open .acc-body { max-height:300px; }
-.acc-body-inner { padding:0 24px 24px 24px; padding-left:80px; font-size:14px; line-height:1.65; color:rgba(251,248,241,.65); opacity:0; transition:opacity .3s .1s; }
-.acc-item.open .acc-body-inner { opacity:1; }
-
-/* STRIPS */
-.strip { display:flex; align-items:center; gap:22px; padding:22px 28px; border-bottom:1px solid rgba(240,178,74,.12); transition:all .2s; }
-.strip:hover { background:rgba(240,178,74,.03); padding-left:36px; }
-.strip .n { font-size:26px; font-weight:800; color:rgba(240,178,74,.35); min-width:52px; font-family:'Courier New',monospace; letter-spacing:-.02em; }
-.strip h4 { font-size:15px; font-weight:600; margin-bottom:4px; }
-.strip p { font-size:13px; color:rgba(251,248,241,.55); line-height:1.5; }
-.strip .arrow { color:#F0B24A; font-size:20px; margin-left:auto; transition:transform .2s; }
-.strip:hover .arrow { transform:translateX(6px); }
-
-/* RING */
-.ring-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; max-width:760px; }
-.ring { aspect-ratio:1; border-radius:50%; padding:36px; background:rgba(240,178,74,.05); border:1px solid rgba(240,178,74,.2); display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; transition:all .3s; position:relative; }
-.ring::before { content:''; position:absolute; inset:10px; border-radius:50%; border:1px dashed rgba(240,178,74,.2); pointer-events:none; }
-.ring:hover { border-color:rgba(240,178,74,.5); background:rgba(240,178,74,.08); }
-.ring .num { font-family:'Courier New',monospace; font-size:10px; color:rgba(240,178,74,.6); margin-bottom:10px; letter-spacing:.15em; }
-.ring h4 { font-size:16px; font-weight:700; margin-bottom:6px; }
-.ring p { font-size:12px; color:rgba(251,248,241,.6); line-height:1.45; max-width:150px; }
-
-/* TICK */
-.tick-accordion { display:flex; flex-direction:column; gap:8px; }
-.tick-item { display:flex; gap:18px; padding:20px 24px; border-radius:14px; background:rgba(255,255,255,.02); border:1px solid rgba(255,255,255,.08); cursor:pointer; transition:all .25s; align-items:flex-start; }
-.tick-item:hover { border-color:rgba(240,178,74,.3); background:rgba(240,178,74,.04); }
-.tick-item.open { border-color:rgba(240,178,74,.4); background:rgba(240,178,74,.06); }
-.tick-item .check { width:44px; height:44px; border-radius:50%; border:2px solid #F0B24A; display:grid; place-items:center; color:#F0B24A; font-size:18px; font-weight:700; flex-shrink:0; transition:all .25s; }
-.tick-item:hover .check, .tick-item.open .check { background:#F0B24A; color:#160C08; transform:rotate(-8deg); }
-.tick-item .body { flex:1; }
-.tick-item .body h4 { font-size:15px; font-weight:600; margin-bottom:0; transition:margin .3s; }
-.tick-item.open .body h4 { margin-bottom:6px; }
-.tick-item .body p { font-size:13px; line-height:1.55; color:rgba(251,248,241,.6); max-height:0; overflow:hidden; transition:max-height .35s, margin .35s; margin:0; }
-.tick-item.open .body p { max-height:120px; }
-
-/* PRICING */
-.price-hero { display: grid; grid-template-columns: 1fr 1.3fr; gap: 2px; border-radius: 20px; overflow: hidden; border: 1px solid rgba(240,178,74,.25); background: rgba(240,178,74,.04); margin-bottom: 24px; }
-.price-main { padding: 48px 40px; background: rgba(240,178,74,.08); display: flex; flex-direction: column; justify-content: center; }
-.price-label { font-family: 'Courier New', monospace; font-size: 11px; font-weight: 800; letter-spacing: .25em; color: #F0B24A; text-transform: uppercase; margin-bottom: 8px; }
-.price-amount { font-size: 84px; font-weight: 800; letter-spacing: -.05em; color: #F0B24A; line-height: .95; }
-.price-period { font-size: 15px; color: rgba(251,248,241,.6); margin-top: 12px; letter-spacing: .05em; }
-.price-includes { padding: 48px 40px; background: rgba(255,255,255,.01); }
-.price-includes-title { font-family: 'Courier New', monospace; font-size: 11px; font-weight: 800; letter-spacing: .2em; color: rgba(240,178,74,.7); text-transform: uppercase; margin-bottom: 24px; }
-.price-includes ul { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 12px 24px; }
-.price-includes li { font-size: 14px; color: rgba(251,248,241,.75); padding-left: 24px; position: relative; line-height: 1.5; }
-.price-includes li::before { content: '✓'; position: absolute; left: 0; color: #F0B24A; font-weight: 800; }
-
-.ledger-actions { display:flex; gap:16px; align-items:center; flex-wrap:wrap; margin-top:6px; }
-.ledger-actions .note { font-size:12px; color:rgba(251,248,241,.45); }
-
-/* PANEL */
-.panel { padding:52px 44px; border-radius:22px; background:#0F0704; border:1px solid rgba(240,178,74,.2); position:relative; overflow:hidden; }
-.panel::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,#C75A3D,#F0B24A,#C75A3D); }
-.panel .k { font-size:11px; font-weight:800; letter-spacing:.22em; color:#F0B24A; text-transform:uppercase; margin-bottom:24px; font-family:'Courier New',monospace; }
-.panel-with-image .panel-body { display: grid; grid-template-columns: 1fr 1.4fr; gap: 40px; align-items: center; }
-.panel-image { position: relative; border-radius: 16px; overflow: hidden; aspect-ratio: 4/5; border: 1px solid rgba(240,178,74,.25); background: #0A0503; max-width: 280px; }
-.panel-image img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.9) contrast(1.05) brightness(.95); display: block; }
-.panel-image::after { content: ''; position: absolute; top: 12px; left: 12px; width: 32px; height: 32px; border-top: 2px solid #F0B24A; border-left: 2px solid #F0B24A; border-radius: 6px 0 0 0; z-index: 2; opacity: .7; pointer-events: none; }
-.panel-text h3 { font-size:34px; font-weight:700; letter-spacing:-.025em; line-height:1.12; margin-bottom:16px; }
-.panel-text h3 .accent { color:#F0B24A; }
-.panel-text p { font-size:15px; line-height:1.65; color:rgba(251,248,241,.65); max-width:540px; }
-
-/* CTA FINAL */
-.cta-final { padding:56px 44px; border-radius:22px; background:rgba(240,178,74,.10); border:1px solid rgba(240,178,74,.3); text-align:center; position:relative; overflow:hidden; }
-.cta-final h2 { font-size:40px; font-weight:700; letter-spacing:-.03em; line-height:1.1; margin-bottom:12px; }
-.cta-final h2 .accent { color:#F0B24A; }
-.cta-final p { font-size:15px; color:rgba(251,248,241,.6); margin-bottom:28px; }
-.cta-final .row { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
-
-/* FOOTER */
-.footer { padding:56px 0 36px; border-top:1px solid rgba(240,178,74,.12); margin-top:64px; }
-.footer-grid { display:grid; grid-template-columns:1.8fr 0.8fr 0.8fr 0.8fr 1.4fr; gap:28px; margin-bottom:40px; }
-.footer .logo { font-size:18px; margin-bottom:10px; }
-.footer p { font-size:13px; color:rgba(251,248,241,.5); line-height:1.6; }
-.footer h5 { font-size:10px; font-weight:800; letter-spacing:.18em; text-transform:uppercase; color:#F0B24A; margin-bottom:14px; }
-.footer a { color:rgba(251,248,241,.55); text-decoration:none; transition:color .2s; }
-.footer a:hover { color:#F0B24A; }
-.footer-nav a { display:block; font-size:13px; line-height:1.9; }
-
-/* CONTACT ITEMS with icons */
-.contact-list { display:flex; flex-direction:column; gap:10px; }
-.contact-item { display:flex; align-items:center; gap:12px; font-size:13px; color:rgba(251,248,241,.65); text-decoration:none; transition:all .2s; padding:8px 10px; border-radius:8px; border:1px solid rgba(240,178,74,.15); background:rgba(240,178,74,.02); }
-.contact-item:hover { border-color:rgba(240,178,74,.4); background:rgba(240,178,74,.06); color:#FBF8F1; }
-.contact-item:hover .contact-icon { background:#F0B24A; color:#160C08; }
-.contact-icon { width:32px; height:32px; border-radius:8px; background:rgba(240,178,74,.12); border:1px solid rgba(240,178,74,.25); display:grid; place-items:center; flex-shrink:0; transition:all .2s; color:#F0B24A; }
-.contact-icon svg { width:16px; height:16px; display:block; }
-.contact-text { display:flex; flex-direction:column; line-height:1.3; }
-.contact-label { font-size:10px; letter-spacing:.15em; text-transform:uppercase; color:rgba(240,178,74,.6); font-family:'Courier New',monospace; font-weight:700; }
-.contact-value { font-size:13px; color:rgba(251,248,241,.75); }
-
-.footer-bottom { padding-top:24px; border-top:1px solid rgba(240,178,74,.08); font-size:12px; color:rgba(251,248,241,.4); display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
-
-@media(max-width:900px){
-  .page { padding:0 20px; }
-  .ledger-track::before { left:20px; }
-  .chapter { padding:60px 0 60px 76px; }
-  .chapter-badge { top:60px; }
-  .chapter-badge .dot { margin-left:17px; }
-  .chapter-title { font-size:28px; }
-  .chapter.hero { padding-top:120px; padding-bottom:70px; }
-  .chapter.hero .chapter-title { font-size:38px; }
-  .chapter-lead { font-size:15px; margin-bottom:28px; }
-  .hero-grid { grid-template-columns:1fr; gap:36px; }
-  .split, .ring-grid { grid-template-columns:1fr; }
-  .footer-grid { grid-template-columns:1fr; gap:28px; }
-  .panel, .cta-final { padding:32px 22px; }
-  .panel h3, .cta-final h2 { font-size:24px; }
-  .panel-text h3 { font-size:22px; }
-  .stat-card .num { font-size:56px; }
-  .stat-card { padding:24px; }
-  .panel-with-image .panel-body { grid-template-columns:1fr; gap:24px; }
-  .panel-image { aspect-ratio: 16/10; max-width:100%; }
-  .ring-grid { max-width:100%; }
-  .acc-header { padding:16px 18px; gap:14px; }
-  .acc-header:hover { padding-left:18px; }
-  .acc-body-inner { padding:0 18px 18px 18px; padding-left:68px; font-size:13px; }
-  .acc-title { font-size:14px; }
-  .price-hero { grid-template-columns: 1fr; }
-  .price-main { padding: 36px 24px; }
-  .price-amount { font-size: 64px; }
-  .price-includes { padding: 36px 24px; }
-  .price-includes ul { grid-template-columns: 1fr; }
+:root{
+  --bg:#E8E4DC;
+  --bg-deep:#DED9CF;
+  --surface:#F0ECE5;
+  --text:#1A1814;
+  --muted:#6B655A;
+  --muted-soft:#8A8478;
+  --accent:#B84A2E;
+  --accent-hover:#A03E25;
+  --accent-soft:rgba(184,74,46,0.08);
+  --accent-border:rgba(184,74,46,0.28);
+  --border:rgba(26,24,20,0.12);
+  --border-strong:rgba(26,24,20,0.22);
+  --ink-green:#3E5F3A;
+  --ink-green-soft:rgba(62,95,58,0.07);
 }
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+a{color:inherit;text-decoration:none;}
 
-/* ============ DESKTOP SIZE FIX ============ */
-@media(min-width:901px){
-  .chapter { padding:60px 0 60px 130px; }
-  .chapter-badge { top:60px; }
-  .chapter-title { font-size:36px; margin-bottom:14px; }
-  .chapter-lead { font-size:16px; margin-bottom:32px; }
-  .chapter.hero { padding-top:130px; padding-bottom:80px; }
-  .chapter.hero .chapter-title { font-size:58px; }
-
-  .stat-card { padding:26px; aspect-ratio:6/5; }
-  .stat-card .num { font-size:62px; }
-
-  .acc-header { padding:16px 22px; gap:18px; }
-  .acc-header:hover { padding-left:26px; }
-  .acc-title { font-size:15px; }
-  .acc-num { min-width:36px; padding:5px 9px; }
-  .acc-toggle { font-size:20px; width:20px; }
-  .acc-body-inner { padding:0 22px 20px 74px; font-size:13px; }
-
-  .strip { padding:18px 24px; gap:18px; }
-  .strip:hover { padding-left:32px; }
-  .strip .n { font-size:22px; min-width:46px; }
-  .strip h4 { font-size:14px; }
-  .strip .arrow { font-size:18px; }
-
-  .ring-grid { gap:20px; max-width:680px; }
-  .ring { padding:28px; }
-  .ring h4 { font-size:15px; }
-  .ring p { font-size:11px; max-width:140px; }
-
-  .tick-item { padding:16px 20px; gap:16px; }
-  .tick-item .check { width:38px; height:38px; font-size:16px; }
-  .tick-item .body h4 { font-size:14px; }
-
-  .price-hero { border-radius:18px; margin-bottom:20px; }
-  .price-main { padding:36px 32px; }
-  .price-amount { font-size:68px; }
-  .price-period { font-size:14px; margin-top:8px; }
-  .price-includes { padding:36px 32px; }
-  .price-includes-title { margin-bottom:18px; }
-  .price-includes ul { gap:10px 22px; }
-  .price-includes li { font-size:13px; }
-
-  .panel { padding:40px 36px; }
-  .panel .k { margin-bottom:18px; }
-  .panel-with-image .panel-body { gap:32px; }
-  .panel-image { max-width:240px; }
-  .panel-text h3 { font-size:28px; margin-bottom:14px; }
-  .panel-text p { font-size:14px; max-width:520px; }
-
-  .cta-final { padding:44px 36px; }
-  .cta-final h2 { font-size:32px; margin-bottom:12px; }
-  .cta-final p { font-size:14px; margin-bottom:24px; }
+/* subtle paper grain */
+body::before{
+  content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:radial-gradient(rgba(26,24,20,0.025) 1px, transparent 1px);
+  background-size:3px 3px;opacity:.6;
 }
-/* ============ RESPONSIVE NAV (no hamburger) ============ */
-@media (max-width: 900px) {
-  .nav { padding: 10px 16px; gap: 12px; }
-  .nav-links { gap: 14px; font-size: 12px; }
-  .logo { font-size: 15px; }
-  .btn-go { padding: 7px 12px; font-size: 12px; }
-}
+body > *{position:relative;z-index:1;}
 
-@media (max-width: 640px) {
-  .nav { padding: 8px 12px; gap: 8px; }
-  .nav-links { gap: 10px; font-size: 11px; }
-  .logo { font-size: 14px; }
-  .btn-go { padding: 6px 10px; font-size: 11px; }
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:20px 40px;
+  display:flex;justify-content:space-between;align-items:center;
+  background:rgba(232,228,220,0.88);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--border);
 }
+.logo{font-family:'Syne',sans-serif;font-weight:800;font-size:19px;letter-spacing:2px;text-transform:uppercase;}
+.logo span{color:var(--accent);}
+.nav-links{display:flex;gap:26px;align-items:center;}
+.nav-links a{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);transition:color 0.2s;}
+.nav-links a:hover{color:var(--accent);}
+.btn{display:inline-block;background:var(--text);color:var(--bg);padding:11px 22px;border-radius:2px;font-family:'Syne',sans-serif;font-weight:700;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;border:none;cursor:pointer;transition:background 0.2s;}
+.btn:hover{background:var(--accent);}
+.btn-stamp{display:inline-block;background:transparent;color:var(--accent);padding:10px 20px;border-radius:2px;border:1.5px solid var(--accent);font-family:'Syne',sans-serif;font-weight:700;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:all 0.2s;}
+.btn-stamp:hover{background:var(--accent);color:var(--bg);}
+.btn-ghost{display:inline-block;background:transparent;color:var(--text);padding:11px 22px;border-radius:2px;border:1px solid var(--border-strong);font-family:'Syne',sans-serif;font-weight:700;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:border-color 0.2s,background 0.2s;}
+.btn-ghost:hover{border-color:var(--text);background:rgba(26,24,20,0.03);}
 
-@media (max-width: 480px) {
-  .nav { padding: 6px 10px; }
-  .nav-links { gap: 8px; font-size: 10px; }
-  .logo { font-size: 13px; }
-  .logo span { display: inline; }
-  .btn-go { padding: 5px 8px; font-size: 10px; }
+/* ── HERO ── */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:140px 40px 100px;position:relative;}
+.hero-seal{
+  font-family:'JetBrains Mono',monospace;font-size:10px;
+  color:var(--accent);text-transform:uppercase;letter-spacing:3px;
+  border:1.5px solid var(--accent);padding:6px 14px;border-radius:2px;
+  display:inline-block;margin-bottom:36px;transform:rotate(-2deg);
+  background:var(--accent-soft);
 }
-@media (max-width: 400px) {
-  .nav { flex-wrap: wrap; justify-content: center; }
-  .nav-links { order: 3; width: 100%; justify-content: center; margin-top: 8px; }
+.hero h1{font-family:'Syne',sans-serif;font-size:clamp(2.5rem,7vw,6.5rem);font-weight:800;line-height:0.95;letter-spacing:-0.035em;margin-bottom:28px;}
+.hero h1 em{font-family:'Playfair Display',serif;font-style:italic;font-weight:400;color:var(--accent);}
+.hero p{max-width:600px;font-size:18px;font-weight:400;color:var(--muted);margin-bottom:40px;line-height:1.6;}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;}
+
+/* ── MARQUEE ── */
+.marquee-container{overflow:hidden;border-top:1px solid var(--border-strong);border-bottom:1px solid var(--border-strong);padding:24px 0;background:var(--bg-deep);}
+.marquee{display:flex;white-space:nowrap;animation:scroll 38s linear infinite;}
+.marquee span{font-family:'Syne',sans-serif;font-size:clamp(1.6rem,3.2vw,2.8rem);font-weight:700;text-transform:uppercase;letter-spacing:-0.01em;color:transparent;-webkit-text-stroke:1px rgba(26,24,20,0.32);margin-right:44px;}
+.marquee span:nth-child(even){color:var(--accent);-webkit-text-stroke:0;}
+@keyframes scroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+
+/* ── SPLIT ── */
+.split{max-width:1180px;margin:0 auto;padding:100px 40px;}
+.split-header{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:1px solid var(--border-strong);padding-bottom:18px;margin-bottom:60px;gap:20px;}
+.split-header h2{font-family:'Syne',sans-serif;font-size:40px;font-weight:700;letter-spacing:-0.025em;line-height:1.1;}
+.split-header h2 em{font-family:'Playfair Display',serif;font-style:italic;font-weight:400;color:var(--accent);}
+.split-header span{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted-soft);text-transform:uppercase;letter-spacing:2px;flex-shrink:0;}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border-strong);border:1px solid var(--border-strong);}
+.side{padding:44px 36px;background:var(--bg);}
+.side h3{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:24px;}
+.side.bad h3{color:var(--accent);}
+.side.good{background:var(--ink-green-soft);}
+.side.good h3{color:var(--ink-green);}
+.side ul{list-style:none;display:flex;flex-direction:column;gap:14px;}
+.side li{font-size:15px;color:var(--text);padding-left:26px;position:relative;line-height:1.55;}
+.side.bad li::before{content:'×';position:absolute;left:0;color:var(--accent);font-weight:800;font-size:18px;line-height:1.4;}
+.side.good li::before{content:'✓';position:absolute;left:0;color:var(--ink-green);font-weight:800;}
+
+/* ── MODULES ── */
+.modules{max-width:1180px;margin:0 auto;padding:100px 40px;}
+.modules-label{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--accent);text-transform:uppercase;letter-spacing:2px;margin-bottom:36px;}
+.modules-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border-strong);border:1px solid var(--border-strong);}
+.module{background:var(--bg);padding:38px 30px;transition:background 0.25s;}
+.module:hover{background:var(--surface);}
+.module .num{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);margin-bottom:22px;letter-spacing:1.5px;}
+.module h4{font-family:'Syne',sans-serif;font-size:19px;font-weight:700;text-transform:uppercase;letter-spacing:0.4px;margin-bottom:10px;}
+.module p{font-size:13px;color:var(--muted);line-height:1.55;}
+
+/* ── TERMINAL / RECEIPT ── */
+.terminal{max-width:1180px;margin:0 auto;padding:100px 40px;}
+.terminal-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:28px;gap:20px;border-bottom:1px solid var(--border-strong);padding-bottom:18px;}
+.terminal-header .label{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--accent);text-transform:uppercase;letter-spacing:2px;}
+.terminal-header .status{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:1px;}
+.terminal-header .status .dot{display:inline-block;width:6px;height:6px;background:var(--ink-green);border-radius:50%;margin-right:6px;vertical-align:middle;box-shadow:0 0 0 3px rgba(62,95,58,0.15);}
+.console{background:var(--surface);border:1px solid var(--border-strong);border-left:3px solid var(--accent);border-radius:2px;overflow:hidden;font-family:'JetBrains Mono',monospace;max-width:860px;box-shadow:2px 3px 0 rgba(26,24,20,0.06);}
+.console-header{background:var(--bg-deep);padding:10px 16px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);font-size:11px;color:var(--muted);}
+.console-dots span{display:inline-block;width:8px;height:8px;border-radius:50%;margin-left:6px;background:var(--border-strong);}
+.console-dots span:nth-child(1){background:var(--accent);opacity:0.5;}
+.console-dots span:nth-child(2){background:var(--ink-green);opacity:0.5;}
+.console-dots span:nth-child(3){background:var(--text);opacity:0.3;}
+.console-body{padding:22px;min-height:280px;max-height:420px;overflow-y:auto;color:var(--text);font-size:13px;line-height:1.75;}
+.console-body::-webkit-scrollbar{width:6px;}
+.console-body::-webkit-scrollbar-thumb{background:var(--border-strong);border-radius:3px;}
+.terminal-line{margin-bottom:4px;}
+.terminal-muted{color:var(--muted-soft);}
+.terminal-accent{color:var(--accent);font-weight:700;}
+.terminal-ok{color:var(--ink-green);font-weight:600;}
+.terminal-input-line{display:flex;gap:10px;align-items:center;margin-top:10px;}
+.prompt{color:var(--accent);font-weight:700;}
+.terminal-input{background:transparent;border:none;color:var(--text);font-family:'JetBrains Mono',monospace;font-size:13px;outline:none;flex:1;padding:0;caret-color:var(--accent);}
+.terminal-response{color:var(--muted);margin-bottom:10px;white-space:pre-wrap;font-size:13px;line-height:1.75;}
+
+/* ── PRICING ── */
+.pricing{max-width:880px;margin:0 auto;padding:100px 40px;}
+.price-card{border:1px solid var(--border-strong);padding:56px 48px;background:var(--surface);text-align:center;position:relative;box-shadow:3px 4px 0 rgba(26,24,20,0.05);}
+.price-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent);}
+.price-tag{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);text-transform:uppercase;letter-spacing:2.5px;margin-bottom:22px;}
+.price-amount{font-family:'Syne',sans-serif;font-size:clamp(2.8rem,6vw,4.8rem);font-weight:800;letter-spacing:-0.04em;line-height:1;color:var(--text);margin-bottom:10px;}
+.price-amount small{font-family:'Inter',sans-serif;font-size:0.22em;font-weight:500;color:var(--muted);letter-spacing:0;display:inline-block;vertical-align:middle;margin-left:12px;}
+.price-note{font-family:'Playfair Display',serif;font-style:italic;font-size:16px;color:var(--accent);margin-bottom:32px;}
+.price-perks{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:12px 28px;margin-top:32px;padding-top:28px;border-top:1px dashed var(--border-strong);}
+.price-perks li{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;display:flex;align-items:center;gap:6px;}
+.price-perks li::before{content:'✓';color:var(--ink-green);font-weight:800;}
+
+/* ── FAQ ── */
+.faq{max-width:880px;margin:0 auto;padding:100px 40px;}
+.faq-label{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--accent);text-transform:uppercase;letter-spacing:2px;margin-bottom:36px;}
+.faq-list{display:flex;flex-direction:column;gap:1px;background:var(--border-strong);border:1px solid var(--border-strong);}
+.faq-item{background:var(--bg);}
+.faq-item summary{cursor:pointer;list-style:none;padding:22px 26px;display:flex;justify-content:space-between;align-items:center;gap:20px;font-family:'Syne',sans-serif;font-weight:700;font-size:15px;letter-spacing:-0.01em;transition:background 0.2s;}
+.faq-item summary::-webkit-details-marker{display:none;}
+.faq-item summary::after{content:'+';font-family:'JetBrains Mono',monospace;font-size:20px;color:var(--accent);font-weight:400;transition:transform 0.3s;line-height:1;}
+.faq-item[open] summary::after{transform:rotate(45deg);}
+.faq-item summary:hover{background:var(--surface);}
+.faq-body{padding:0 26px 24px;font-size:14px;color:var(--muted);line-height:1.75;max-width:720px;}
+
+/* ── FOOTER ── */
+footer{padding:100px 40px 40px;border-top:1px solid var(--border-strong);max-width:1180px;margin:0 auto;background:var(--bg);}
+.footer-cta{font-family:'Syne',sans-serif;font-size:clamp(2.2rem,5vw,4.5rem);font-weight:800;letter-spacing:-0.03em;line-height:1;margin-bottom:48px;text-align:left;}
+.footer-cta em{font-family:'Playfair Display',serif;font-style:italic;font-weight:400;color:var(--accent);}
+.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:32px;margin-bottom:48px;}
+.footer-col h5{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--accent);text-transform:uppercase;letter-spacing:2px;margin-bottom:16px;}
+.footer-col p,.footer-col a{font-size:13px;color:var(--muted);line-height:1.8;display:block;}
+.footer-col a:hover{color:var(--accent);}
+.footer-brand{font-family:'Syne',sans-serif;font-weight:800;font-size:21px;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;}
+.footer-brand span{color:var(--accent);}
+.footer-note{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted-soft);text-transform:uppercase;letter-spacing:1px;padding-top:24px;border-top:1px solid var(--border);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+
+/* ── MOBILE ── */
+@media(max-width:768px){
+  nav{padding:14px 20px;}
+  .nav-links a:not(.btn){display:none;}
+  .nav-links{gap:14px;}
+  .hero{padding:120px 20px 70px;}
+  .hero p{font-size:16px;}
+  .split,.modules,.terminal,.pricing,.faq{padding:70px 20px;}
+  .split-header{flex-direction:column;align-items:flex-start;gap:8px;}
+  .split-header h2{font-size:26px;}
+  .grid-2,.modules-grid{grid-template-columns:1fr;}
+  .side{padding:32px 24px;}
+  .price-card{padding:40px 24px;}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+  footer{padding:70px 20px 30px;}
+  .footer-cta{font-size:2rem;}
+  .terminal-header{flex-direction:column;align-items:flex-start;gap:8px;}
+  .console-body{min-height:240px;max-height:380px;font-size:12px;}
+  .terminal-input{font-size:12px;}
+  .marquee span{font-size:1.5rem;}
 }
+@media(max-width:480px){.footer-grid{grid-template-columns:1fr;}}
 </style>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "MtaaLink",
-  "operatingSystem": "Web",
-  "applicationCategory": "BusinessApplication",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "KES"
-  },
-  "description": "Chama and village management software with SMS voting for feature phones."
-}
-</script>
-</head><body>
+</head>
+<body>
 
-<div class="bg"><div class="blob b1"></div><div class="blob b2"></div></div>
-
-<nav class="nav">
-  <div class="logo">Mtaa<span>Link</span></div>
+<nav>
+  <a href="/" class="logo">MTAA<span>LINK</span>.</a>
   <div class="nav-links">
-    <a href="#features">Features</a>
-    <a href="#how">How It Works</a>
+    <a href="#why">Why</a>
+    <a href="#modules">Modules</a>
+    <a href="#demo">Demo</a>
     <a href="#pricing">Pricing</a>
-    <a href="#faq">FAQ</a>
+    <a href="https://www.mtaalink.org/register" class="btn-stamp">Start Free</a>
   </div>
-  <a class="btn-go" href="https://mtaalink.org/register">Try Free</a>
 </nav>
 
-<div class="page">
-  <div class="ledger-track">
-
-    <!-- CHAPTER 00 — HERO -->
-    <section class="chapter hero">
-      <div class="chapter-badge"><div class="dot"></div><div class="num">00</div></div>
-      <div class="chapter-label">Welcome</div>
-      <div class="hero-grid">
-        <div>
-          <h1 class="chapter-title">Your organization, <span class="accent">finally in order.</span></h1>
-          <p class="chapter-lead">MtaaLink is an all-in-one management platform for Kenyan organizations — members, money, meetings, projects, elections, SMS announcements, and reports. Runs in any browser. Free during early access.</p>
-          <div class="cta">
-            <a class="btn-p" href="https://mtaalink.org/register">Try it free →</a>
-            <a class="btn-s" href="#features">See Features</a>
-          </div>
-        </div>
-        <div class="stat-card">
-          <div class="lbl-top">Chapter 00</div>
-          <div>
-            <div class="num">2025</div>
-            <div class="lbl">Built in Kenya</div>
-            <div class="desc">For any organization that meets, collects, and manages members.</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CHAPTER 01 — PROBLEM -->
-    <section class="chapter">
-      <div class="chapter-badge"><div class="dot"></div><div class="num">01</div></div>
-      <div class="chapter-label">The Problem</div>
-      <h2 class="chapter-title">Running an organization <span class="accent">shouldn't be this hard.</span></h2>
-      <p class="chapter-lead">Records scattered. Arguments about money. Minutes lost. Sound familiar?</p>
-      <div class="split">
-        <div class="split-side bad">
-          <h3>Without MtaaLink</h3>
-          <ul>
-            <li>Records scattered across WhatsApp and notebooks</li>
-            <li>Arguments about who paid and who didn't</li>
-            <li>Meeting minutes lost or never written</li>
-            <li>No clear picture of members or finances</li>
-          </ul>
-        </div>
-        <div class="split-side good">
-          <h3>With MtaaLink</h3>
-          <ul>
-            <li>Everything in one place, on your phone</li>
-            <li>Every payment recorded, every member tracked</li>
-            <li>Minutes generated automatically</li>
-            <li>Reports you can show anyone, anytime</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- CHAPTER 02 — FEATURES -->
-    <section class="chapter" id="features">
-      <div class="chapter-badge"><div class="dot"></div><div class="num">02</div></div>
-      <div class="chapter-label">What It Does</div>
-      <h2 class="chapter-title">Everything your organization needs.</h2>
-      <p class="chapter-lead">Click each feature to see what it does. No more switching between apps.</p>
-
-      <div class="accordion">
-        <div class="acc-item" onclick="toggleAcc(this)">
-          <div class="acc-header">
-            <div class="acc-num">01</div>
-            <div class="acc-title">Members & Groups</div>
-            <div class="acc-toggle">+</div>
-          </div>
-          <div class="acc-body">
-            <div class="acc-body-inner">Full directory with roles, custom fields, and unlimited groups — organized the way your team actually works. Add members one at a time or import from a list.</div>
-          </div>
-        </div>
-
-        <div class="acc-item" onclick="toggleAcc(this)">
-          <div class="acc-header">
-            <div class="acc-num">02</div>
-            <div class="acc-title">Contributions</div>
-            <div class="acc-toggle">+</div>
-          </div>
-          <div class="acc-body">
-            <div class="acc-body-inner">Record every payment — M-PESA or cash. See who paid, who owes, and when. Full history that anyone in your team can review.</div>
-          </div>
-        </div>
-
-        <div class="acc-item" onclick="toggleAcc(this)">
-          <div class="acc-header">
-            <div class="acc-num">03</div>
-            <div class="acc-title">Meetings & Minutes</div>
-            <div class="acc-toggle">+</div>
-          </div>
-          <div class="acc-body">
-            <div class="acc-body-inner">Agendas, attendance, motions, and auto-generated minutes you can share immediately after the meeting. No more lost notebooks.</div>
-          </div>
-        </div>
-
-        <div class="acc-item" onclick="toggleAcc(this)">
-          <div class="acc-header">
-            <div class="acc-num">04</div>
-            <div class="acc-title">Projects</div>
-            <div class="acc-toggle">+</div>
-          </div>
-          <div class="acc-body">
-            <div class="acc-body-inner">Track milestones, budgets, and progress on every project — from start to completion. Everyone sees the same status.</div>
-          </div>
-        </div>
-
-        <div class="acc-item" onclick="toggleAcc(this)">
-          <div class="acc-header">
-            <div class="acc-num">05</div>
-            <div class="acc-title">Events</div>
-            <div class="acc-toggle">+</div>
-          </div>
-          <div class="acc-body">
-            <div class="acc-body-inner">Plan, invite, and check in — from fundraisers to formal gatherings. Track attendance and contributions in real time.</div>
-          </div>
-        </div>
-
-        <div class="acc-item" onclick="toggleAcc(this)">
-          <div class="acc-header">
-            <div class="acc-num">06</div>
-            <div class="acc-title">Expenses</div>
-            <div class="acc-toggle">+</div>
-          </div>
-          <div class="acc-body">
-            <div class="acc-body-inner">Track spending with categories, descriptions, and totals. See where every shilling goes — with clear, printable reports.</div>
-          </div>
-        </div>
-
-        <div class="acc-item" onclick="toggleAcc(this)">
-          <div class="acc-header">
-            <div class="acc-num">07</div>
-            <div class="acc-title">Reports & PDFs</div>
-            <div class="acc-toggle">+</div>
-          </div>
-          <div class="acc-body">
-            <div class="acc-body-inner">Export member directories, meeting minutes, contribution history, and financial summaries to PDF. Share with anyone — board, donors, members.</div>
-          </div>
-        </div>
-
-        <div class="acc-item" onclick="toggleAcc(this)">
-          <div class="acc-header">
-            <div class="acc-num">08</div>
-            <div class="acc-title">Elections & Voting</div>
-            <div class="acc-toggle">+</div>
-          </div>
-          <div class="acc-body">
-            <div class="acc-body-inner">Run transparent elections for your organization. Members receive a unique voting code via SMS, then vote by replying to the message or on our secure voting page. Live results update in real time. Double-voting is automatically prevented. Works on any phone.</div>
-          </div>
-        </div>
-
-        <div class="acc-item" onclick="toggleAcc(this)">
-          <div class="acc-header">
-            <div class="acc-num">09</div>
-            <div class="acc-title">Announcements via SMS</div>
-            <div class="acc-toggle">+</div>
-          </div>
-          <div class="acc-body">
-            <div class="acc-body-inner">Send important updates to your entire membership — meeting reminders, event notices, urgent alerts — straight to their phones by SMS. Target specific groups or send to everyone. Track who received the message and who didn't.</div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- CHAPTER 03 — HOW IT WORKS -->
-    <section class="chapter" id="how">
-      <div class="chapter-badge"><div class="dot"></div><div class="num">03</div></div>
-      <div class="chapter-label">How It Works</div>
-      <h2 class="chapter-title">Up and running <span class="accent">in 5 minutes.</span></h2>
-      <p class="chapter-lead">No training required. If you can use WhatsApp, you can use MtaaLink.</p>
-      <div>
-        <div class="strip">
-          <div class="n">01</div>
-          <div><h4>Create your organization</h4><p>Sign up free — just your email, phone, and organization name. Takes 2 minutes.</p></div>
-          <div class="arrow">→</div>
-        </div>
-        <div class="strip">
-          <div class="n">02</div>
-          <div><h4>Add your members and groups</h4><p>Type them in, or import from a list. Organize into groups as you go.</p></div>
-          <div class="arrow">→</div>
-        </div>
-        <div class="strip">
-          <div class="n">03</div>
-          <div><h4>Run your organization</h4><p>Track contributions, hold meetings, manage projects, and export reports — all from your phone.</p></div>
-          <div class="arrow">→</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CHAPTER 04 — VALUES -->
-    <section class="chapter">
-      <div class="chapter-badge"><div class="dot"></div><div class="num">04</div></div>
-      <div class="chapter-label">Our Values</div>
-      <h2 class="chapter-title">Three principles <span class="accent">we never break.</span></h2>
-      <p class="chapter-lead">Everything we build starts from these.</p>
-      <div class="ring-grid">
-        <div class="ring"><div class="num">01</div><h4>Trust</h4><p>Every record visible to your whole team.</p></div>
-        <div class="ring"><div class="num">02</div><h4>Simplicity</h4><p>If you can use WhatsApp, you can use this.</p></div>
-        <div class="ring"><div class="num">03</div><h4>Local</h4><p>Built for how Kenya actually works.</p></div>
-      </div>
-    </section>
-
-    <!-- CHAPTER 05 — WHY US -->
-    <section class="chapter">
-      <div class="chapter-badge"><div class="dot"></div><div class="num">05</div></div>
-      <div class="chapter-label">Why Us</div>
-      <h2 class="chapter-title">What you get, <span class="accent">from day one.</span></h2>
-      <p class="chapter-lead">Click each item to learn more.</p>
-      <div class="tick-accordion">
-        <div class="tick-item" onclick="this.classList.toggle('open')">
-          <div class="check">✓</div>
-          <div class="body"><h4>Free during early access</h4><p>No card, no trial, no hidden fees. Free while MtaaLink is in early access.</p></div>
-        </div>
-        <div class="tick-item" onclick="this.classList.toggle('open')">
-          <div class="check">✓</div>
-          <div class="body"><h4>Runs on any phone</h4><p>Android, iPhone, or desktop browser — no app download needed. Installs to your home screen if you want.</p></div>
-        </div>
-        <div class="tick-item" onclick="this.classList.toggle('open')">
-          <div class="check">✓</div>
-          <div class="body"><h4>Built for Kenyan networks</h4><p>Lightweight, fast, and designed to work even when the connection is slow.</p></div>
-        </div>
-        <div class="tick-item" onclick="this.classList.toggle('open')">
-          <div class="check">✓</div>
-          <div class="body"><h4>Your data, your rules</h4><p>Export everything to PDF anytime. No lock-in. No hidden data policies.</p></div>
-        </div>
-        <div class="tick-item" onclick="this.classList.toggle('open')">
-          <div class="check">✓</div>
-          <div class="body"><h4>Members can log in too</h4><p>Every member gets their own account to see meetings, contributions, and election results — read-only, so nothing gets changed by mistake.</p></div>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- CHAPTER 05.5 — WHY US (SEO CONTENT) -->
-    <section class="chapter">
-      <div class="chapter-badge"><div class="dot"></div><div class="num">05B</div></div>
-      <div class="chapter-label">Why MtaaLink</div>
-      <h2 class="chapter-title">Built for the way <span class="accent">Kenya works.</span></h2>
-      
-      <div style="max-width: 720px; line-height: 1.7; color: rgba(251,248,241,.8); margin-top: 24px;">
-        <h3 style="color: #F0B24A; margin-bottom: 12px; font-size: 20px;">SMS Voting for Feature Phones</h3>
-        <p style="margin-bottom: 24px;">Most Kenyans don't have smartphones, but almost everyone has a feature phone. MtaaLink allows your chama, welfare group, or village to run transparent elections without requiring anyone to download an app. Members receive a unique voting code via SMS, reply with their vote, and results are tallied live. This ensures 100% participation, even from elders who only use basic phones.</p>
-        
-        <h3 style="color: #F0B24A; margin-bottom: 12px; font-size: 20px;">M-PESA Contribution Tracking</h3>
-        <p style="margin-bottom: 24px;">Stop chasing people for monthly contributions. Track M-PESA and cash payments in one place. See exactly who has paid, who owes, and export a clear PDF financial report at the end of the month to share with the committee.</p>
-        
-        <h3 style="color: #F0B24A; margin-bottom: 12px; font-size: 20px;">No Training Required</h3>
-        <p>If your members can use WhatsApp, they can use MtaaLink. The interface is designed to be simple, lightweight, and fast, even on slow 3G connections in rural Kenya.</p>
-      </div>
-    </section>
-
-    <!-- CHAPTER 06 — PRICING -->
-    <section class="chapter" id="pricing">
-      <div class="chapter-badge"><div class="dot"></div><div class="num">06</div></div>
-      <div class="chapter-label">Pricing</div>
-      <h2 class="chapter-title">One price. <span class="accent">Everything included.</span></h2>
-      <p class="chapter-lead">No tiers. No restrictions. No hidden fees.</p>
-
-      <div class="price-hero">
-        <div class="price-main">
-          <div class="price-label">KES</div>
-          <div class="price-amount">2,500</div>
-          <div class="price-period">per month</div>
-        </div>
-        <div class="price-includes">
-          <div class="price-includes-title">Everything included:</div>
-          <ul>
-            <li>Unlimited members</li>
-            <li>Unlimited groups</li>
-            <li>Unlimited meetings & minutes</li>
-            <li>Unlimited projects & events</li>
-            <li>Contributions & expense tracking</li>
-            <li>Reports & PDF exports</li>
-            <li>Free updates & support</li>
-            <li>Works on any phone</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="ledger-actions">
-        <a class="btn-p" href="https://mtaalink.org/register">Get started →</a>
-        <span class="note">Free during early access. KES 2,500/month when we launch paid.</span>
-      </div>
-    </section>
-        <!-- CHAPTER 07 — FAQ -->
-    <section class="chapter" id="faq">
-      <div class="chapter-badge"><div class="dot"></div><div class="num">07</div></div>
-      <div class="chapter-label">FAQ</div>
-      <h2 class="chapter-title">Questions? <span class="accent">We've got answers.</span></h2>
-      <p class="chapter-lead">Click any question to see the answer.</p>
-
-      <div class="accordion">
-        <div class="acc-item" onclick="toggleAcc(this)">
-          <div class="acc-header">
-            <div class="acc-num">Q1</div>
-            <div class="acc-title">What is MtaaLink?</div>
-            <div class="acc-toggle">+</div>
-          </div>
-          <div class="acc-body">
-            <div class="acc-body-inner">MtaaLink is an all-in-one management platform for Kenyan organizations. It handles members, contributions, meetings, projects, events, expenses, and reports — all in one place, accessible from any phone or computer.</div>
-          </div>
-        </div>
-
-        <div class="acc-item" onclick="toggleAcc(this)">
-          <div class="acc-header">
-            <div class="acc-num">Q2</div>
-            <div class="acc-title">Who is it for?</div>
-            <div class="acc-toggle">+</div>
-          </div>
-          <div class="acc-body">
-            <div class="acc-body-inner">Any organization that manages members and money — chamas, churches, SACCOs, welfare groups, villages, small businesses, NGOs. If you meet regularly, collect contributions, and need records, MtaaLink is for you.</div>
-          </div>
-        </div>
-
-        <div class="acc-item" onclick="toggleAcc(this)">
-          <div class="acc-header">
-            <div class="acc-num">Q3</div>
-            <div class="acc-title">How much does it cost?</div>
-            <div class="acc-toggle">+</div>
-          </div>
-          <div class="acc-body">
-            <div class="acc-body-inner">Free during early access. No card required. When we launch paid plans, MtaaLink will cost KES 2,500 per month — everything included, no tiers, no restrictions.</div>
-          </div>
-        </div>
-
-        <div class="acc-item" onclick="toggleAcc(this)">
-          <div class="acc-header">
-            <div class="acc-num">Q4</div>
-            <div class="acc-title">Do I need to install an app?</div>
-            <div class="acc-toggle">+</div>
-          </div>
-          <div class="acc-body">
-            <div class="acc-body-inner">No. MtaaLink runs in your browser on any phone — Android, iPhone, or desktop. If you want, you can install it to your home screen like a normal app. But it's optional.</div>
-          </div>
-        </div>
-
-        <div class="acc-item" onclick="toggleAcc(this)">
-          <div class="acc-header">
-            <div class="acc-num">Q5</div>
-            <div class="acc-title">Does it work without internet?</div>
-            <div class="acc-toggle">+</div>
-          </div>
-          <div class="acc-body">
-            <div class="acc-body-inner">The app loads and works on slow or unstable networks. Right now, most features still need a connection to save new data. Full offline mode is on our roadmap.</div>
-          </div>
-        </div>
-
-        <div class="acc-item" onclick="toggleAcc(this)">
-          <div class="acc-header">
-            <div class="acc-num">Q6</div>
-            <div class="acc-title">Can I export my data?</div>
-            <div class="acc-toggle">+</div>
-          </div>
-          <div class="acc-body">
-            <div class="acc-body-inner">Yes. Every report can be exported to PDF — member directories, meeting minutes, contribution summaries, expense reports, and more. Your data belongs to you.</div>
-          </div>
-        </div>
-
-        <div class="acc-item" onclick="toggleAcc(this)">
-          <div class="acc-header">
-            <div class="acc-num">Q7</div>
-            <div class="acc-title">Is my data safe?</div>
-            <div class="acc-toggle">+</div>
-          </div>
-          <div class="acc-body">
-            <div class="acc-body-inner">Yes. All data is encrypted and stored securely. Only members of your organization can see your records. We never sell or share your data with anyone.</div>
-          </div>
-        </div>
-
-                  <div class="acc-item" onclick="toggleAcc(this)">
-            <div class="acc-header">
-              <div class="acc-num">Q8</div>
-              <div class="acc-title">Can I run elections in MtaaLink?</div>
-              <div class="acc-toggle">+</div>
-            </div>
-            <div class="acc-body">
-              <div class="acc-body-inner">Yes. Create an election, we send unique voting codes to all members via SMS, and results are tallied live. Members can vote by replying to the SMS or on our secure web page — no app needed.</div>
-            </div>
-          </div>
-
-          <div class="acc-item" onclick="toggleAcc(this)">
-            <div class="acc-header">
-              <div class="acc-num">Q9</div>
-              <div class="acc-title">Can I send SMS announcements to members?</div>
-              <div class="acc-toggle">+</div>
-            </div>
-            <div class="acc-body">
-              <div class="acc-body-inner">Yes. Send announcements to all members or specific groups by SMS. Track delivery, and reach members on any phone — no smartphone or app required.</div>
-            </div>
-          </div>
-
-<div class="acc-item" onclick="toggleAcc(this)">
-          <div class="acc-header">
-            <div class="acc-num">Q10</div>
-            <div class="acc-title">How do I get started?</div>
-            <div class="acc-toggle">+</div>
-          </div>
-          <div class="acc-body">
-            <div class="acc-body-inner">Sign up free at <a href="https://mtaalink.org/register" style="color:#F0B24A;">mtaalink.org/register</a>. It takes 2 minutes. Add your members, and you're ready to start managing. No training needed — if you can use WhatsApp, you can use MtaaLink.</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CHAPTER 08 — PROMISE -->
-    <section class="chapter" id="about">
-      <div class="chapter-badge"><div class="dot"></div><div class="num">08</div></div>
-      <div class="chapter-label">Our Promise</div>
-
-      <div class="panel panel-with-image">
-        <div class="k">Why we built this</div>
-
-        <div class="panel-body">
-          <div>
-            <div class="panel-image">
-              <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=800&q=80&auto=format&fit=crop" alt="A meeting in Kenya" loading="lazy">
-            </div>
-          </div>
-
-          <div class="panel-text">
-            <h3>Built in Kenya. <span class="accent">For Kenya.</span></h3>
-            <p>MtaaLink speaks the language of chama, harambee, and mradi. Built by <strong style="color:#F0B24A;">Elijah Sukano</strong> in 2025 — because running an organization shouldn't require a notebook or a spreadsheet.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CHAPTER 09 — FINAL CTA -->
-    <section class="chapter">
-      <div class="chapter-badge"><div class="dot"></div><div class="num">09</div></div>
-      <div class="chapter-label">Get Started</div>
-      <div class="cta-final">
-        <h2>Ready to get your <span class="accent">organization in order?</span></h2>
-        <p>Set up takes 5 minutes. Free, no card, works on any phone.</p>
-        <div class="row">
-          <a class="btn-p" href="https://mtaalink.org/register">Try it free →</a>
-          <a class="btn-s" href="https://wa.me/254719750245" target="_blank" rel="noopener">Talk to Us on WhatsApp</a>
-        </div>
-      </div>
-    </section>
-
+<section class="hero">
+  <div class="hero-seal">Official Record · Est. 2025</div>
+  <h1>Your org,<br>finally <em>in order.</em></h1>
+  <p>Members, money, meetings, projects, elections and SMS — all in one place. Runs in any browser. Built for chamas, churches, SACCOs and welfare groups.</p>
+  <div class="hero-ctas">
+    <a href="https://www.mtaalink.org/register" class="btn">Start Free</a>
+    <a href="#demo" class="btn-ghost">See How It Works</a>
   </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-grid">
-      <div>
-        <div class="logo">Mtaa<span>Link</span></div>
-        <p>Built for how Kenya works.</p>
-      </div>
-      <div>
-        <h5>Product</h5>
-        <div class="footer-nav">
-  <a href="#features">Features</a>
-  <a href="#how">How It Works</a>
-  <a href="#pricing">Pricing</a>
-  <a href="#faq">FAQ</a>
+<div class="marquee-container">
+  <div class="marquee">
+    <span>CHAMAS</span><span>CHURCHES</span><span>SACCOS</span><span>WELFARE GROUPS</span><span>VILLAGES</span><span>SMALL BUSINESSES</span>
+    <span>CHAMAS</span><span>CHURCHES</span><span>SACCOS</span><span>WELFARE GROUPS</span><span>VILLAGES</span><span>SMALL BUSINESSES</span>
+  </div>
 </div>
-      </div>
-      <div>
-        <h5>Company</h5>
-        <div class="footer-nav">
-          <a href="#about">About</a>
-          <a href="mailto:sukanoelijah@gmail.com">Contact</a>
-        </div>
-      </div>
-      <div>
-        <h5>Follow</h5>
-        <div class="footer-nav">
-          <a href="https://www.linkedin.com/in/elijah-sukano-b73438261" target="_blank" rel="me">LinkedIn</a>
-          <a href="https://github.com/Sukano-prog" target="_blank" rel="me">GitHub</a>
-        </div>
-      </div>
-      <div>
-        <h5>Get in touch</h5>
-        <div class="contact-list">
-          <a class="contact-item" href="mailto:sukanoelijah@gmail.com">
-            <div class="contact-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            </div>
-            <div class="contact-text">
-              <span class="contact-label">Email</span>
-              <span class="contact-value">sukanoelijah@gmail.com</span>
-            </div>
-          </a>
-          <a class="contact-item" href="https://wa.me/254719750245" target="_blank" rel="noopener">
-            <div class="contact-icon">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            </div>
-            <div class="contact-text">
-              <span class="contact-label">WhatsApp</span>
-              <span class="contact-value">+254 719 750 245</span>
-            </div>
-          </a>
-          <a class="contact-item" href="tel:+254719750245">
-            <div class="contact-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            </div>
-            <div class="contact-text">
-              <span class="contact-label">Call</span>
-              <span class="contact-value">+254 719 750 245</span>
-            </div>
-          </a>
-        </div>
+
+<section id="why" class="split">
+  <div class="split-header">
+    <h2>WhatsApp groups are <em>not</em> an accounting system.</h2>
+    <span>(The problem)</span>
+  </div>
+  <div class="grid-2">
+    <div class="side bad">
+      <h3>Without MtaaLink</h3>
+      <ul>
+        <li>Members tracked on paper, spreadsheets, or someone's memory</li>
+        <li>Money contributions lost in long WhatsApp threads</li>
+        <li>Elections disputed — no audit trail, no tally</li>
+        <li>Announcements forgotten the moment they scroll past</li>
+        <li>Reports impossible to produce when needed</li>
+      </ul>
+    </div>
+    <div class="side good">
+      <h3>With MtaaLink</h3>
+      <ul>
+        <li>Every member on file — with ID, phone, role, status</li>
+        <li>Contributions logged, receipts generated, reports exportable</li>
+        <li>SMS voting with live tally and full audit trail</li>
+        <li>Announcements delivered to every phone, tracked</li>
+        <li>One-click PDF reports for any period, any member</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="modules" class="modules">
+  <div class="modules-label">(01) — The Modules</div>
+  <div class="modules-grid">
+    <div class="module"><div class="num">01</div><h4>Members</h4><p>Full profiles — ID, phone, role, join date, status. Group members however your org works.</p></div>
+    <div class="module"><div class="num">02</div><h4>Money</h4><p>Contributions, expenses, balances, receipts. Every shilling accounted for.</p></div>
+    <div class="module"><div class="num">03</div><h4>Meetings</h4><p>Schedule, attendance, minutes, decisions. Never lose a resolution again.</p></div>
+    <div class="module"><div class="num">04</div><h4>Projects</h4><p>Track progress, budget and milestones — from harambee to completion.</p></div>
+    <div class="module"><div class="num">05</div><h4>Elections</h4><p>SMS voting codes, live tally, full audit trail. No disputes, no recounts.</p></div>
+    <div class="module"><div class="num">06</div><h4>Reports</h4><p>Any report, exportable to PDF in one click. Board-ready in seconds.</p></div>
+  </div>
+</section>
+
+<section id="demo" class="terminal">
+  <div class="terminal-header">
+    <span class="label">(02) — Receipt Terminal</span>
+    <span class="status"><span class="dot"></span>online · typing enabled</span>
+  </div>
+  <div class="console">
+    <div class="console-header">
+      <span>mtaalink@demo — receipt printer v1.0</span>
+      <span class="console-dots"><span></span><span></span><span></span></span>
+    </div>
+    <div class="console-body" id="terminal-body">
+      <div class="terminal-line terminal-muted">MtaaLink receipt terminal v1.0</div>
+      <div class="terminal-line terminal-muted">Type <span class="terminal-accent">help</span> to see available commands.</div>
+      <br>
+      <div class="terminal-input-line" id="terminal-input-container">
+        <span class="prompt">➜</span>
+        <input type="text" id="terminal-input" class="terminal-input" autocomplete="off" spellcheck="false" autofocus>
       </div>
     </div>
-    <div class="footer-bottom">
-      <div>© 2025 MtaaLink. Built in Kenya.</div>
-      <div><a href="/privacy" style="color:rgba(251,248,241,.6);text-decoration:none;border-bottom:none;">Privacy</a> · <a href="/terms" style="color:rgba(251,248,241,.6);text-decoration:none;border-bottom:none;">Terms</a></div>
-    </div>
-  </footer>
+  </div>
+</section>
 
-</div>
+<section id="pricing" class="pricing">
+  <div class="price-card">
+    <div class="price-tag">One plan · No tiers</div>
+    <div class="price-amount">KES 2,500<small>/ month</small></div>
+    <p class="price-note">Free during early access. No card. No contract.</p>
+    <a href="https://www.mtaalink.org/register" class="btn">Start Free Now</a>
+    <ul class="price-perks">
+      <li>Unlimited members</li>
+      <li>SMS included</li>
+      <li>PDF exports</li>
+      <li>Works on any phone</li>
+    </ul>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="faq-label">(03) — Questions</div>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary>What is MtaaLink?</summary>
+      <div class="faq-body">MtaaLink is an all-in-one management platform for Kenyan organizations. Members, money, meetings, projects, elections and SMS announcements — all in one place, running in any browser.</div>
+    </details>
+    <details class="faq-item">
+      <summary>Who is it for?</summary>
+      <div class="faq-body">Any organization that manages members and money — chamas, churches, SACCOs, welfare groups, villages, and small businesses.</div>
+    </details>
+    <details class="faq-item">
+      <summary>How much does MtaaLink cost?</summary>
+      <div class="faq-body">Free during early access. When paid plans launch, MtaaLink will cost KES 2,500 per month — one plan, unlimited members, SMS included.</div>
+    </details>
+    <details class="faq-item">
+      <summary>Do I need to install an app?</summary>
+      <div class="faq-body">No. MtaaLink runs in your browser on any phone. You can optionally install it to your home screen for faster access — but it's not required.</div>
+    </details>
+    <details class="faq-item">
+      <summary>Can I run elections in MtaaLink?</summary>
+      <div class="faq-body">Yes. Create an election, we send unique voting codes to all members via SMS, and results are tallied live. Members can vote by replying to the SMS or on our secure web page — no app needed.</div>
+    </details>
+    <details class="faq-item">
+      <summary>Can I send SMS announcements to members?</summary>
+      <div class="faq-body">Yes. Send announcements to all members or specific groups by SMS. Track delivery, and reach members on any phone — no smartphone or app required.</div>
+    </details>
+    <details class="faq-item">
+      <summary>Can I export my data?</summary>
+      <div class="faq-body">Yes. Every report can be exported to PDF in one click — member lists, contributions, expenses, election results, meeting minutes.</div>
+    </details>
+    <details class="faq-item">
+      <summary>How do I get started?</summary>
+      <div class="faq-body">Sign up free at mtaalink.org/register. Takes 2 minutes. You'll be managing your organization the same day.</div>
+    </details>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-cta">Let's get your org<br><em>in order.</em></div>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <div class="footer-brand">MTAA<span>LINK</span>.</div>
+      <p>All-in-one management for Kenyan organizations. Built in Nairobi.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Product</h5>
+      <a href="#modules">Modules</a>
+      <a href="#demo">Demo</a>
+      <a href="#pricing">Pricing</a>
+      <a href="https://www.mtaalink.org/register">Register</a>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <a href="https://www.mtaalink.org/privacy">Privacy</a>
+      <a href="https://www.mtaalink.org/terms">Terms</a>
+      <a href="mailto:sukanoelijah@gmail.com">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h5>Connect</h5>
+      <a href="mailto:sukanoelijah@gmail.com">Email ↗</a>
+      <a href="https://wa.me/254719750245" target="_blank">WhatsApp ↗</a>
+      <a href="https://www.linkedin.com/in/elijah-sukano-b73438261" target="_blank">LinkedIn ↗</a>
+    </div>
+  </div>
+  <div class="footer-note">
+    <span>© 2025 MtaaLink · Nairobi, Kenya</span>
+    <span>Designed &amp; built from scratch.</span>
+  </div>
+</footer>
 
 <script>
-function toggleAcc(el) {
-  const parent = el.parentElement;
-  const isOpen = el.classList.contains('open');
-  parent.querySelectorAll('.acc-item').forEach(item => item.classList.remove('open'));
-  if (!isOpen) el.classList.add('open');
-}
+(function(){
+  const body = document.getElementById('terminal-body');
+  const input = document.getElementById('terminal-input');
+  const inputLine = document.getElementById('terminal-input-container');
+
+  const commands = {
+    'help': 'Available commands:\n  modules       — list all 6 modules\n  demo election — watch an SMS election in action\n  demo sms      — watch an SMS announcement deliver\n  pricing       — plan and pricing\n  whoami        — what is MtaaLink?\n  clear         — clear the terminal',
+    'modules': '01  MEMBERS    — full profiles, roles, groups\n02  MONEY      — contributions, expenses, receipts\n03  MEETINGS   — schedule, attendance, minutes\n04  PROJECTS   — progress, budget, milestones\n05  ELECTIONS  — SMS voting, live tally, audit trail\n06  REPORTS    — one-click PDF exports',
+    'whoami': 'MtaaLink — all-in-one management for Kenyan orgs.\nMembers · Money · Meetings · Projects · Elections · SMS · Reports.\nRuns in any browser. No app to install.',
+    'pricing': 'PLAN:     MtaaLink — KES 2,500 / month\nSTATUS:   Free during early access\nINCLUDES: Unlimited members · SMS · PDF exports · Any phone\nSIGN UP:  https://www.mtaalink.org/register',
+    'clear': ''
+  };
+
+  const electionDemo = [
+    '> mtaalink election create --title "Chairperson 2025"',
+    '✓ Election created · ID: elec_7f3a9b',
+    '> mtaalink election send-codes',
+    '✓ Sending 147 unique SMS voting codes...',
+    '  [████████████████████] 147/147 delivered',
+    '> mtaalink election tally --live',
+    '  Candidate A (Wanjiku)  :  72 votes  ████████████████ 49%',
+    '  Candidate B (Otieno)   :  58 votes  █████████████    39%',
+    '  Candidate C (Akinyi)   :  17 votes  ████             12%',
+    '✓ Election complete · results locked · audit trail saved'
+  ];
+
+  const smsDemo = [
+    '> mtaalink sms send --group all --message "AGM this Saturday 10am at the hall. Attendance is mandatory."',
+    '✓ Recipients: 147 members',
+    '  [████████████████████] 147/147 delivered',
+    '✓ Delivery report: 145 confirmed · 2 pending retry',
+    '✓ Cost: KES 294 (KES 2 per SMS) · logged in Money module'
+  ];
+
+  function scrollBottom(){ body.scrollTop = body.scrollHeight; }
+
+  function addLine(html, cls){
+    const d = document.createElement('div');
+    d.className = cls || 'terminal-line';
+    d.innerHTML = html;
+    body.appendChild(d);
+    scrollBottom();
+    return d;
+  }
+
+  function addBlock(lines){
+    lines.forEach(function(line, i){
+      setTimeout(function(){
+        const isCmd = line.startsWith('>');
+        const isOk = line.startsWith('✓');
+        let cls = 'terminal-line';
+        if (isCmd) cls += ' terminal-accent';
+        else if (isOk) cls += ' terminal-ok';
+        else cls += ' terminal-muted';
+        addLine(line, cls);
+      }, i * 90);
+    });
+    setTimeout(scrollBottom, lines.length * 90 + 100);
+  }
+
+  input.addEventListener('keydown', function(e){
+    if (e.key !== 'Enter') return;
+    const raw = input.value.trim();
+    const cmd = raw.toLowerCase();
+    input.value = '';
+
+    addLine('<span class="prompt">➜</span> ' + raw);
+
+    if (cmd === 'clear'){
+      body.innerHTML = '';
+      body.appendChild(inputLine);
+      scrollBottom();
+      return;
+    }
+
+    if (cmd === 'demo election'){ addBlock(electionDemo); return; }
+    if (cmd === 'demo sms'){ addBlock(smsDemo); return; }
+
+    const response = commands[cmd];
+    if (response){
+      addLine(response.replace(/\n/g, '<br>'), 'terminal-response');
+    } else if (raw !== ''){
+      addLine('command not found: ' + raw + '. Type <span class="terminal-accent">help</span> for options.', 'terminal-response');
+    }
+    body.appendChild(inputLine);
+    input.focus();
+    scrollBottom();
+  });
+
+  const demoSection = document.getElementById('demo');
+  if ('IntersectionObserver' in window){
+    const obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if (en.isIntersecting) input.focus(); });
+    }, { threshold: 0.4 });
+    obs.observe(demoSection);
+  }
+})();
 </script>
 
-</body></html>
-
+</body>
+</html>

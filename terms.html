@@ -4,137 +4,200 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Terms of Service — MtaaLink</title>
-<meta name="description" content="MtaaLink Terms of Service — the rules for using the platform.">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://www.mtaalink.org/terms.html">
+<meta name="description" content="The terms that govern your use of MtaaLink.">
+<link rel="canonical" href="https://www.mtaalink.org/terms">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-* { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior:smooth; }
-body { font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif; background:#160C08; color:#FBF8F1; line-height:1.65; -webkit-font-smoothing:antialiased; }
+:root{
+  --bg:#E8E4DC;--bg-deep:#DED9CF;--surface:#F0ECE5;
+  --text:#1A1814;--muted:#6B655A;--muted-soft:#8A8478;
+  --accent:#B84A2E;--accent-soft:rgba(184,74,46,0.08);
+  --border:rgba(26,24,20,0.12);--border-strong:rgba(26,24,20,0.22);
+  --ink-green:#3E5F3A;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration:none;}
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background-image:radial-gradient(rgba(26,24,20,0.025) 1px, transparent 1px);background-size:3px 3px;opacity:.6;}
+body > *{position:relative;z-index:1;}
 
-.bg { position:fixed; inset:0; z-index:0; overflow:hidden; }
-.bg::before { content:''; position:absolute; inset:0; background-image:repeating-linear-gradient(45deg, rgba(240,178,74,.02) 0 30px, transparent 30px 60px); }
-.blob { position:absolute; border-radius:50%; filter:blur(140px); }
-.b1 { width:500px; height:500px; background:#C75A3D; top:-200px; left:-150px; opacity:.2; }
-.b2 { width:400px; height:400px; background:#F0B24A; bottom:-150px; right:-100px; opacity:.1; }
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 40px;display:flex;justify-content:space-between;align-items:center;background:rgba(232,228,220,0.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--border);}
+.logo{font-family:'Syne',sans-serif;font-weight:800;font-size:19px;letter-spacing:2px;text-transform:uppercase;}
+.logo span{color:var(--accent);}
+.nav-back{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);transition:color 0.2s;}
+.nav-back:hover{color:var(--accent);}
 
-.nav { position:relative; z-index:10; max-width:820px; margin:0 auto; padding:24px 32px 0; }
-.nav-inner { display:flex; justify-content:space-between; align-items:center; padding:12px 20px;
-  background:rgba(22,12,8,.65); backdrop-filter:blur(20px) saturate(160%); -webkit-backdrop-filter:blur(20px) saturate(160%);
-  border:1px solid rgba(240,178,74,.15); border-radius:14px; }
-.logo { font-weight:800; font-size:16px; letter-spacing:-.02em; color:#FBF8F1; text-decoration:none; }
-.logo span { color:#F0B24A; }
-.back { color:rgba(251,248,241,.6); text-decoration:none; font-size:13px; transition:color .2s; }
-.back:hover { color:#F0B24A; }
+.doc{max-width:760px;margin:0 auto;padding:160px 40px 100px;}
+.doc-seal{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--accent);text-transform:uppercase;letter-spacing:3px;border:1.5px solid var(--accent);padding:6px 14px;border-radius:2px;display:inline-block;margin-bottom:36px;transform:rotate(-2deg);background:var(--accent-soft);}
+.doc h1{font-family:'Syne',sans-serif;font-size:clamp(2.2rem,5vw,3.6rem);font-weight:800;letter-spacing:-0.03em;line-height:1;margin-bottom:20px;}
+.doc h1 em{font-family:'Playfair Display',serif;font-style:italic;font-weight:400;color:var(--accent);}
+.doc-meta{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted-soft);text-transform:uppercase;letter-spacing:2px;border-bottom:1px solid var(--border-strong);padding-bottom:24px;margin-bottom:48px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;}
 
-.page { position:relative; z-index:1; max-width:820px; margin:0 auto; padding:60px 32px 100px; }
-.kicker { font-family:'Courier New',monospace; font-size:11px; font-weight:700; letter-spacing:.25em; text-transform:uppercase; color:#F0B24A; margin-bottom:16px; }
-h1 { font-size:48px; font-weight:700; letter-spacing:-.03em; line-height:1.1; margin-bottom:12px; }
-.meta { font-size:13px; color:rgba(251,248,241,.5); margin-bottom:48px; padding-bottom:24px; border-bottom:1px solid rgba(240,178,74,.12); }
-h2 { font-size:22px; font-weight:700; letter-spacing:-.01em; margin-top:48px; margin-bottom:16px; color:#F0B24A; display:flex; align-items:center; gap:12px; }
-h2::before { content:''; width:6px; height:6px; background:#F0B24A; border-radius:50%; }
-p { font-size:15px; color:rgba(251,248,241,.75); margin-bottom:16px; }
-ul { list-style:none; margin-bottom:16px; padding-left:0; }
-li { font-size:15px; color:rgba(251,248,241,.75); padding-left:22px; position:relative; margin-bottom:8px; }
-li::before { content:'—'; position:absolute; left:0; color:rgba(240,178,74,.5); }
-a { color:#F0B24A; text-decoration:none; border-bottom:1px solid rgba(240,178,74,.3); transition:border-color .2s; }
-a:hover { border-color:#F0B24A; }
-strong { color:#FBF8F1; font-weight:600; }
+.doc h2{font-family:'Syne',sans-serif;font-size:22px;font-weight:700;letter-spacing:-0.015em;margin:44px 0 16px;padding-top:32px;border-top:1px solid var(--border);}
+.doc h2:first-of-type{padding-top:0;border-top:none;margin-top:0;}
+.doc h2 .num{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);margin-right:10px;letter-spacing:1px;font-weight:400;vertical-align:middle;}
+.doc h3{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;margin:26px 0 10px;letter-spacing:-0.005em;}
+.doc p{margin-bottom:16px;color:var(--text);font-size:15px;}
+.doc p.lead{font-size:17px;color:var(--muted);line-height:1.7;margin-bottom:32px;}
+.doc ul{margin:14px 0 20px 0;padding-left:0;list-style:none;}
+.doc li{position:relative;padding-left:26px;margin-bottom:10px;color:var(--text);font-size:15px;line-height:1.65;}
+.doc li::before{content:'—';position:absolute;left:0;color:var(--accent);font-family:'JetBrains Mono',monospace;font-weight:700;}
+.doc strong{font-weight:600;color:var(--text);}
+.doc code{font-family:'JetBrains Mono',monospace;font-size:13px;background:var(--surface);padding:2px 6px;border:1px solid var(--border);border-radius:2px;color:var(--accent);}
+.doc a.link{color:var(--accent);border-bottom:1px solid var(--accent-soft);transition:border-color 0.2s;}
+.doc a.link:hover{border-color:var(--accent);}
 
-.footer-note { margin-top:64px; padding-top:32px; border-top:1px solid rgba(240,178,74,.12); font-size:13px; color:rgba(251,248,241,.4); text-align:center; }
-.footer-note a { color:rgba(251,248,241,.6); border-bottom:none; }
-.footer-note a:hover { color:#F0B24A; }
+.callout{background:var(--surface);border:1px solid var(--border-strong);border-left:3px solid var(--accent);padding:22px 26px;margin:28px 0;border-radius:2px;}
+.callout p{margin:0;font-size:14px;color:var(--muted);}
+.callout p strong{color:var(--text);}
+
+footer{padding:60px 40px 40px;border-top:1px solid var(--border-strong);max-width:760px;margin:60px auto 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted-soft);text-transform:uppercase;letter-spacing:1px;}
+footer a{color:var(--muted);transition:color 0.2s;}
+footer a:hover{color:var(--accent);}
 
 @media(max-width:768px){
-  .nav { padding:16px 20px 0; }
-  .page { padding:40px 20px 60px; }
-  h1 { font-size:32px; }
-  h2 { font-size:18px; margin-top:36px; }
-  p, li { font-size:14px; }
+  nav{padding:14px 20px;}
+  .doc{padding:120px 20px 60px;}
+  .doc-meta{flex-direction:column;align-items:flex-start;}
+  footer{padding:40px 20px;}
 }
 </style>
 </head>
 <body>
 
-<div class="bg"><div class="blob b1"></div><div class="blob b2"></div></div>
-
-<nav class="nav">
-  <div class="nav-inner">
-    <a class="logo" href="/">Mtaa<span>Link</span></a>
-    <a class="back" href="/">← Back to home</a>
-  </div>
+<nav>
+  <a href="/" class="logo">MTAA<span>LINK</span>.</a>
+  <a href="/" class="nav-back">← Back to Home</a>
 </nav>
 
-<main class="page">
-  <div class="kicker">Legal</div>
-  <h1>Terms of Service</h1>
-  <div class="meta">Last updated: September 2025 · Effective immediately</div>
+<main class="doc">
+  <div class="doc-seal">Official Document</div>
+  <h1>Terms of <em>Service.</em></h1>
+  <div class="doc-meta">
+    <span>Last updated: January 2025</span>
+    <span>Effective immediately</span>
+  </div>
 
-  <p>These terms govern your use of MtaaLink. By signing up or using the platform, you agree to them.</p>
+  <p class="lead">These terms govern your use of MtaaLink. By creating an account or using the platform, you agree to them. Plain language, no traps — but please read carefully.</p>
 
-  <h2>1. What MtaaLink Is</h2>
-  <p>MtaaLink is a management platform for organizations. It helps you track members, contributions, meetings, projects, events, expenses, and reports. It is built and operated in Kenya.</p>
+  <h2><span class="num">01</span>Who we are</h2>
+  <p>MtaaLink is an organization management platform built and operated from Nairobi, Kenya. "We", "us", and "MtaaLink" refer to the operators of this platform. "You" refers to the individual or organization using it.</p>
 
-  <h2>2. Who Can Use It</h2>
-  <p>You may use MtaaLink if you are at least 16 years old and legally able to enter into these terms. You must provide accurate information when you register.</p>
-
-  <h2>3. Your Account</h2>
+  <h2><span class="num">02</span>Accepting these terms</h2>
+  <p>By registering an account, clicking "I agree", or using the platform, you:</p>
   <ul>
-    <li>You are responsible for keeping your password safe.</li>
-    <li>You are responsible for everything done under your account.</li>
-    <li>Notify us immediately at <a href="mailto:sukanoelijah@gmail.com">sukanoelijah@gmail.com</a> if you suspect unauthorized access.</li>
-    <li>One account per person. Organizations may have multiple admin accounts.</li>
+    <li>Confirm you are at least 18 years old, or are using the platform with the permission of a legal guardian.</li>
+    <li>Confirm you have authority to represent the organization you are registering.</li>
+    <li>Agree to these terms and to our <a href="/privacy" class="link">Privacy Policy</a>.</li>
+  </ul>
+  <p>If you do not agree, do not use MtaaLink.</p>
+
+  <h2><span class="num">03</span>Your account</h2>
+  <ul>
+    <li><strong>Accurate details</strong> — you must provide truthful information when registering.</li>
+    <li><strong>Security</strong> — you are responsible for keeping your password safe. Do not share your admin login.</li>
+    <li><strong>Activity</strong> — you are responsible for all activity under your account.</li>
+    <li><strong>Notify us</strong> — if you suspect unauthorized access, contact us immediately at <a href="mailto:sukanoelijah@gmail.com" class="link">sukanoelijah@gmail.com</a>.</li>
   </ul>
 
-  <h2>4. Acceptable Use</h2>
+  <h2><span class="num">04</span>Acceptable use</h2>
   <p>You agree <strong>not</strong> to:</p>
   <ul>
-    <li>Use MtaaLink for anything illegal under Kenyan law.</li>
-    <li>Send spam, threats, or unwanted messages to your members.</li>
-    <li>Attempt to access another organization's data.</li>
-    <li>Reverse-engineer, scrape, or attack the platform.</li>
-    <li>Impersonate another person or organization.</li>
+    <li>Use MtaaLink for any illegal activity under Kenyan law.</li>
+    <li>Send spam or unsolicited SMS messages through the platform.</li>
+    <li>Store content that is defamatory, fraudulent, or violates someone's privacy.</li>
+    <li>Attempt to hack, reverse-engineer, or disrupt the platform.</li>
+    <li>Use the platform to harass, threaten, or discriminate against any person or group.</li>
+    <li>Resell or white-label MtaaLink without written permission.</li>
+    <li>Abuse the SMS system (e.g. sending duplicate or automated messages to bulk recipients for non-announcement purposes).</li>
   </ul>
-  <p>If you break these rules, we may suspend or delete your account.</p>
+  <p>We may suspend or terminate accounts that violate these rules.</p>
 
-  <h2>5. Your Data</h2>
-  <p>You own your data. We only store it to provide the service. You can export everything to PDF at any time. See our <a href="/privacy">Privacy Policy</a> for how we handle it.</p>
-  <p>If you delete your account, your data is permanently deleted within 30 days.</p>
-
-  <h2>6. Pricing</h2>
-  <p>MtaaLink is <strong>free during early access</strong>. No card required.</p>
-  <p>When paid plans launch, the price will be <strong>KES 2,500 per month</strong>, all features included. We will notify you by email before any paid plan begins. You may cancel at any time.</p>
-
-  <h2>7. Availability</h2>
-  <p>We aim to keep MtaaLink online and working. However, we do not guarantee uninterrupted service. We may perform maintenance, and unexpected downtime can happen.</p>
-
-  <h2>8. Disclaimer</h2>
-  <p>MtaaLink is provided <strong>"as is"</strong>. We do not guarantee that it will meet every need or that it will always be error-free. You use it at your own discretion.</p>
-  <p>We are not responsible for decisions you make based on data in the platform, or for losses caused by data entry errors in your organization.</p>
-
-  <h2>9. Limitation of Liability</h2>
-  <p>To the maximum extent allowed by Kenyan law, MtaaLink is not liable for indirect, incidental, or consequential damages arising from your use of the platform.</p>
-
-  <h2>10. Changes to These Terms</h2>
-  <p>We may update these terms from time to time. If we make significant changes, we will notify you by email or in the app. Continued use of MtaaLink means you accept the updated terms.</p>
-
-  <h2>11. Governing Law</h2>
-  <p>These terms are governed by the laws of <strong>Kenya</strong>. Any disputes will be handled in Kenyan courts.</p>
-
-  <h2>12. Contact</h2>
-  <p>For any questions about these terms:</p>
+  <h2><span class="num">05</span>Your data</h2>
   <ul>
-    <li>Email: <a href="mailto:sukanoelijah@gmail.com">sukanoelijah@gmail.com</a></li>
-    <li>Phone / WhatsApp: <a href="tel:+254719750245">+254 719 750 245</a></li>
+    <li><strong>You own your data</strong> — all members, contributions, meetings, projects, elections, and messages belong to your organization, not to us.</li>
+    <li><strong>We store it for you</strong> — we keep your data secure and make it available to you through the platform.</li>
+    <li><strong>You can export it</strong> — at any time, for any report or record.</li>
+    <li><strong>You can delete it</strong> — when you delete your account, we delete your data within 30 days (see Privacy Policy).</li>
+    <li><strong>You are responsible</strong> — for ensuring your organization's use of MtaaLink complies with Kenyan data protection law.</li>
   </ul>
 
-  <div class="footer-note">
-    © 2025 MtaaLink. Built in Kenya. · <a href="/privacy">Privacy Policy</a> · <a href="/">Home</a>
+  <h2><span class="num">06</span>SMS messaging</h2>
+  <p>MtaaLink sends SMS messages on your behalf for voting codes and announcements. By using this feature, you agree that:</p>
+  <ul>
+    <li>You have consent from your members to receive SMS messages from your organization.</li>
+    <li>You will not use SMS to spam or harass.</li>
+    <li>You are responsible for message content.</li>
+    <li>SMS delivery is subject to mobile network availability; we do not guarantee 100% delivery on every network at all times.</li>
+    <li>SMS costs are included in your subscription during early access. After launch, SMS is billed per message at rates shown in the app.</li>
+  </ul>
+
+  <h2><span class="num">07</span>Pricing & payment</h2>
+  <ul>
+    <li><strong>Free during early access</strong> — MtaaLink is free to use while we're in early access.</li>
+    <li><strong>Future pricing</strong> — when paid plans launch, MtaaLink will cost KES 2,500/month, one plan, unlimited members, SMS included. We will give at least 30 days' notice before charging.</li>
+    <li><strong>No hidden fees</strong> — if pricing changes, you'll see it clearly.</li>
+    <li><strong>Refunds</strong> — if you are charged in error, we will refund you in full.</li>
+  </ul>
+
+  <h2><span class="num">08</span>Availability</h2>
+  <p>We work hard to keep MtaaLink available. However:</p>
+  <ul>
+    <li>We do not guarantee 100% uptime — no service can.</li>
+    <li>We may schedule maintenance with advance notice.</li>
+    <li>We are not responsible for outages caused by your internet provider, mobile network, or device.</li>
+  </ul>
+  <div class="callout">
+    <p><strong>Our commitment:</strong> if we have a planned outage, we'll notify you at least 24 hours in advance. If we have an unexpected outage longer than 4 hours, we'll credit your account for the time lost (once paid plans launch).</p>
   </div>
+
+  <h2><span class="num">09</span>Intellectual property</h2>
+  <ul>
+    <li><strong>MtaaLink's code and design</strong> belong to us. You may not copy, redistribute, or sell them.</li>
+    <li><strong>Your data</strong> belongs to you. We do not claim any rights over it.</li>
+    <li><strong>Feedback you send us</strong> may be used by us to improve the product, without obligation.</li>
+  </ul>
+
+  <h2><span class="num">10</span>Third-party services</h2>
+  <p>MtaaLink uses third-party providers (SMS gateways, hosting, payment processors). These are governed by their own terms, but we've chosen providers with strong security and privacy records.</p>
+
+  <h2><span class="num">11</span>Limitation of liability</h2>
+  <p>MtaaLink is provided "as is." To the maximum extent allowed by Kenyan law:</p>
+  <ul>
+    <li>We are not liable for indirect or consequential losses.</li>
+    <li>We are not liable for loss of data caused by events outside our reasonable control.</li>
+    <li>Our maximum liability to you is the amount you've paid us in the last 12 months (or zero if you're on the free plan).</li>
+  </ul>
+  <p><strong>Exception:</strong> We are not limiting our liability for fraud, death, or personal injury caused by our negligence.</p>
+
+  <h2><span class="num">12</span>Termination</h2>
+  <ul>
+    <li><strong>You can leave anytime</strong> — close your account from settings or contact us.</li>
+    <li><strong>We can suspend accounts</strong> that violate these terms. We'll tell you why.</li>
+    <li><strong>We can discontinue the service</strong> with at least 60 days' notice. You'll be able to export all your data before it shuts down.</li>
+  </ul>
+
+  <h2><span class="num">13</span>Changes to these terms</h2>
+  <p>If we make material changes, we'll notify you by email and post a prominent notice. Continued use after changes means you accept them. If you don't accept, you can close your account.</p>
+
+  <h2><span class="num">14</span>Governing law</h2>
+  <p>These terms are governed by the laws of Kenya. Any dispute will be resolved first through good-faith negotiation, then through Kenyan courts if necessary.</p>
+
+  <h2><span class="num">15</span>Contact</h2>
+  <p>Questions about these terms? Reach us at:</p>
+  <ul>
+    <li>Email: <a href="mailto:sukanoelijah@gmail.com" class="link">sukanoelijah@gmail.com</a></li>
+    <li>WhatsApp: <a href="https://wa.me/254719750245" class="link" target="_blank">+254 719 750 245</a></li>
+    <li>Location: Nairobi, Kenya</li>
+  </ul>
 </main>
+
+<footer>
+  <span>© 2025 MtaaLink · Nairobi, Kenya</span>
+  <span><a href="/privacy">Privacy Policy</a> · <a href="/">Home</a></span>
+</footer>
 
 </body>
 </html>
