@@ -222,6 +222,123 @@ footer{padding:100px 40px 40px;border-top:1px solid var(--border-strong);max-wid
   .marquee span{font-size:1.5rem;}
 }
 @media(max-width:480px){.footer-grid{grid-template-columns:1fr;}}
+
+/* ── eMs Systems trigger links ── */
+.ems-trigger{
+  color:var(--accent);
+  text-decoration:none;
+  border-bottom:1px solid transparent;
+  transition:border-color 0.2s, color 0.2s;
+  font-weight:inherit;
+  cursor:pointer;
+}
+.ems-trigger:hover{border-bottom-color:var(--accent);}
+.panel-text p .ems-trigger{font-weight:600;}
+.footer-note .ems-trigger{font-family:var(--mono);font-size:10px;letter-spacing:1px;text-transform:uppercase;}
+
+/* ── Modal overlay ── */
+.ems-modal-overlay{
+  display:none;
+  position:fixed;inset:0;z-index:100000;
+  background:rgba(26,24,20,0.85);
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  align-items:center;justify-content:center;
+  padding:20px;
+  opacity:0;
+  transition:opacity 0.3s;
+}
+.ems-modal-overlay.active{display:flex;opacity:1;}
+
+/* ── Modal card — bone paper, rust border, seal stamp ── */
+.ems-modal{
+  background:var(--surface);
+  border:1px solid var(--border-strong);
+  border-top:3px solid var(--accent);
+  padding:48px 40px 40px;
+  max-width:440px;width:100%;
+  position:relative;
+  box-shadow:4px 6px 0 rgba(26,24,20,0.15), 0 20px 60px rgba(0,0,0,0.4);
+  transform:scale(0.92) rotate(-1deg);
+  transition:transform 0.35s cubic-bezier(0.34,1.56,0.64,1);
+}
+.ems-modal-overlay.active .ems-modal{transform:scale(1) rotate(0deg);}
+
+/* The rotated seal at the top */
+.ems-modal::before{
+  content:'UNDER CONSTRUCTION';
+  position:absolute;top:-14px;left:28px;
+  background:var(--accent);color:var(--surface);
+  font-family:'JetBrains Mono',monospace;
+  font-size:9px;font-weight:500;
+  letter-spacing:2.5px;
+  padding:5px 12px;
+  transform:rotate(-2deg);
+  border-radius:2px;
+}
+
+.ems-modal-kicker{
+  font-family:'JetBrains Mono',monospace;
+  font-size:10px;color:var(--accent);
+  text-transform:uppercase;letter-spacing:2.5px;
+  margin-bottom:16px;
+}
+
+.ems-modal h2{
+  font-family:'Syne',sans-serif;
+  font-size:32px;font-weight:800;
+  letter-spacing:-0.03em;line-height:1.1;
+  color:var(--text);
+  margin-bottom:16px;
+}
+.ems-modal h2 em{
+  font-family:'Playfair Display',serif;
+  font-style:italic;font-weight:400;
+  color:var(--accent);
+}
+
+.ems-modal p{
+  font-size:15px;line-height:1.7;
+  color:var(--muted);
+  margin-bottom:28px;
+}
+
+.ems-modal-btn{
+  width:100%;
+  background:var(--text);
+  color:var(--bg);
+  border:none;
+  padding:14px 22px;
+  font-family:'Syne',sans-serif;
+  font-weight:700;font-size:11px;
+  letter-spacing:1.5px;text-transform:uppercase;
+  cursor:pointer;
+  border-radius:2px;
+  transition:background 0.2s;
+}
+.ems-modal-btn:hover{background:var(--accent);}
+
+/* Cheeky final state */
+.ems-modal-haha{
+  display:none;
+  text-align:center;
+  padding:8px 0;
+}
+.ems-modal-haha svg{margin-bottom:12px;}
+.ems-modal-haha .haha-text{
+  font-family:'Playfair Display',serif;
+  font-style:italic;
+  font-size:26px;
+  color:var(--accent);
+  line-height:1.2;
+  transform:rotate(-2deg);
+  margin-top:8px;
+}
+
+@media(max-width:480px){
+  .ems-modal{padding:40px 26px 32px;}
+  .ems-modal h2{font-size:26px;}
+  .ems-modal-haha .haha-text{font-size:22px;}
+}
 </style>
 </head>
 <body>
@@ -234,7 +351,7 @@ footer{padding:100px 40px 40px;border-top:1px solid var(--border-strong);max-wid
     <a href="#how">How</a>
     <a href="#demo">Demo</a>
     <a href="#pricing">Pricing</a>
-    <a href="https://mtaalink.org/register" class="btn-stamp">Start Free</a>
+    <a href="#" class="btn-stamp ems-trigger start-free-btn" style="opacity:0.85;">Coming Soon</a>
   </div>
 </nav>
 
@@ -243,7 +360,7 @@ footer{padding:100px 40px 40px;border-top:1px solid var(--border-strong);max-wid
   <h1>Your org,<br>finally <em>in order.</em></h1>
   <p>Members, money, meetings, projects, elections and SMS — all in one place. Runs in any browser. Built for chamas, churches, SACCOs and welfare groups.</p>
   <div class="hero-ctas">
-    <a href="https://mtaalink.org/register" class="btn">Start Free</a>
+    <a href="#" class="btn ems-trigger start-free-btn" style="opacity:0.85;">Coming Soon</a>
     <a href="#how" class="btn-ghost">See how it works</a>
   </div>
 </section>
@@ -294,7 +411,7 @@ footer{padding:100px 40px 40px;border-top:1px solid var(--border-strong);max-wid
       </div>
       <div class="panel-text">
         <h3>Built in Kenya. <em>For Kenya.</em></h3>
-        <p>MtaaLink speaks the language of chama, harambee, and mradi. Built by <strong>Elijah Sukano</strong> in 2025 — because running an organization shouldn't require a notebook or a spreadsheet.</p>
+        <p>MtaaLink speaks the language of chama, harambee, and mradi. Built by <a href="#" class="ems-trigger">Elijah Sukano</a> in 2025 — because running an organization shouldn't require a notebook or a spreadsheet.</p>
       </div>
     </div>
   </div>
@@ -361,7 +478,7 @@ footer{padding:100px 40px 40px;border-top:1px solid var(--border-strong);max-wid
     <div class="price-tag">One plan · No tiers</div>
     <div class="price-amount">KES 2,500<small>/ month</small></div>
     <p class="price-note">Free during early access. No card. No contract.</p>
-    <a href="https://mtaalink.org/register" class="btn">Start Free Now</a>
+    <a href="#" class="btn ems-trigger start-free-btn" style="opacity:0.85;">Coming Soon</a>
     <ul class="price-perks">
       <li>Unlimited members</li>
       <li>SMS included</li>
@@ -404,7 +521,7 @@ footer{padding:100px 40px 40px;border-top:1px solid var(--border-strong);max-wid
     </details>
     <details class="faq-item">
       <summary>How do I get started?</summary>
-      <div class="faq-body">Sign up free at mtaalink.org/register. Takes 2 minutes. You'll be managing your organization the same day.</div>
+      <div class="faq-body">Registration opens soon. Check back later, or reach out via the contact details below — we'll notify you the moment it's live.</div>
     </details>
   </div>
 </section>
@@ -421,7 +538,7 @@ footer{padding:100px 40px 40px;border-top:1px solid var(--border-strong);max-wid
       <a href="#modules">Modules</a>
       <a href="#demo">Demo</a>
       <a href="#pricing">Pricing</a>
-      <a href="https://mtaalink.org/register">Register</a>
+      <span style="color:var(--muted);opacity:0.55;cursor:not-allowed;" title="Launching soon">Register (soon)</span>
     </div>
     <div class="footer-col">
       <h5>Company</h5>
@@ -438,7 +555,7 @@ footer{padding:100px 40px 40px;border-top:1px solid var(--border-strong);max-wid
   </div>
   <div class="footer-note">
     <span>© 2025 MtaaLink · Nairobi, Kenya</span>
-    <span>Designed &amp; built from scratch.</span>
+    <span>Made by <a href="#" class="ems-trigger">eMs Systems ↗</a></span>
   </div>
 </footer>
 
@@ -532,6 +649,109 @@ footer{padding:100px 40px 40px;border-top:1px solid var(--border-strong);max-wid
     scrollBottom();
   });
 
+})();
+</script>
+
+
+<!-- eMs Systems Coming Soon Modal -->
+<div id="ems-modal" class="ems-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="ems-modal-title">
+  <div class="ems-modal">
+    <div class="ems-modal-kicker">A note from the studio</div>
+    <h2 id="ems-modal-title">eMs Systems is <em>building.</em></h2>
+    <p id="ems-modal-text">The main website is currently under construction. Coming soon — for now, you can reach us directly through the contact links below.</p>
+
+    <button class="ems-modal-btn" id="ems-modal-btn">OK, I'll wait</button>
+
+    <!-- Second-state: cheeky reward -->
+    <div class="ems-modal-haha" id="ems-modal-haha">
+      <svg viewBox="0 0 100 100" width="72" height="72" style="display:block;margin:0 auto;">
+        <circle cx="50" cy="50" r="44" fill="none" stroke="#B84A2E" stroke-width="2.5" stroke-dasharray="4 4"/>
+        <circle cx="36" cy="42" r="4" fill="#1A1814"/>
+        <path d="M 56 42 Q 62 37 68 42" fill="none" stroke="#1A1814" stroke-width="3" stroke-linecap="round"/>
+        <path d="M 34 64 Q 50 82 66 64" fill="none" stroke="#B84A2E" stroke-width="3.5" stroke-linecap="round"/>
+        <circle cx="78" cy="26" r="4" fill="#3E5F3A" opacity="0.85"/>
+      </svg>
+      <p class="haha-text">Haha! It's gonna be great.</p>
+    </div>
+  </div>
+</div>
+
+
+<script>
+(function(){
+  var triggers = document.querySelectorAll('.ems-trigger');
+  var modal = document.getElementById('ems-modal');
+  var btn = document.getElementById('ems-modal-btn');
+  var textEl = document.getElementById('ems-modal-text');
+  var haha = document.getElementById('ems-modal-haha');
+  var titleEl = document.getElementById('ems-modal-title');
+  var hahaTimer;
+
+  if (!modal) return;
+
+  function resetModal(){
+    titleEl.style.display = '';
+    titleEl.innerHTML = 'eMs Systems is <em>building.</em>';
+    textEl.style.display = '';
+    textEl.textContent = 'The main website is currently under construction. Coming soon — for now, you can reach us directly through the contact links below.';
+    btn.style.display = '';
+    btn.textContent = "OK, I'll wait";
+    haha.style.display = 'none';
+    clearTimeout(hahaTimer);
+  }
+
+  function openModal(e){
+    if (e) e.preventDefault();
+    resetModal();
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal(){
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+    clearTimeout(hahaTimer);
+  }
+
+  function openModalWithContent(e, isRegistration){
+    if (e) e.preventDefault();
+    resetModal();
+    if (isRegistration){
+      titleEl.innerHTML = 'MtaaLink is almost <em>ready.</em>';
+      textEl.textContent = 'Registration opens soon — usually within a few days. Check back shortly, or reach out via the contact links below and we\'ll let you know the moment it\'s live.';
+    }
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  triggers.forEach(function(t){
+    t.addEventListener('click', function(e){
+      var isRegistration = t.classList.contains('start-free-btn');
+      openModalWithContent(e, isRegistration);
+    });
+  });
+
+  // Backdrop click closes
+  modal.addEventListener('click', function(e){
+    if (e.target === modal) closeModal();
+  });
+
+  // Escape closes
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
+  });
+
+  // First-click: "OK, I'll wait" → cheeky reward
+  btn.addEventListener('click', function(){
+    titleEl.style.display = 'none';
+    textEl.style.display = 'none';
+    btn.style.display = 'none';
+    haha.style.display = 'block';
+
+    hahaTimer = setTimeout(function(){
+      closeModal();
+    }, 2500);
+  });
 })();
 </script>
 
